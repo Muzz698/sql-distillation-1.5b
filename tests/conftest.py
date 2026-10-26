@@ -47,7 +47,12 @@ def make_spider_layout(root: Path, splits: dict[str, list[tuple[str, str, str]]]
         "train_spider": "train_spider.json",
         "dev": "dev.json",
     }
-    ddl_for = {"concert_singer": SINGER_DDL, "pets_1": PETS_DDL}
+    ddl_for = {
+        "concert_singer": SINGER_DDL,
+        "pets_1": PETS_DDL,
+        "pets_copy": PETS_DDL,
+        "empty_1": ["CREATE TABLE t (a INTEGER)"],
+    }
     for split, rows in splits.items():
         (base / files[split]).parent.mkdir(parents=True, exist_ok=True)
         (base / files[split]).write_text(

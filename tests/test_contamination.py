@@ -33,6 +33,8 @@ REGISTRY = Registry(
         _db("pets_1", "train", "fp-pets"),
         _db("college_1", "train", "fp-college"),
         _db("concert_singer", "eval", "fp-concert"),
+        # Excluded DBs may share a schema with eval DBs; that is the reason they are excluded.
+        _db("formula_1", "excluded", "fp-concert"),
     ]
 )
 EVAL = [
@@ -62,6 +64,10 @@ def test_eval_db_in_training_rows_fails() -> None:
 
 def test_db_name_check_is_case_insensitive() -> None:
     assert _run(("Concert_Singer", "How many singers?")) == {"eval_db_in_train": 1}
+
+
+def test_excluded_db_in_training_rows_fails() -> None:
+    assert _run(("formula_1", "Which driver won in 2009?")) == {"excluded_db_in_train": 1}
 
 
 def test_unknown_db_fails() -> None:

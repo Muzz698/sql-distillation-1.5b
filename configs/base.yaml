@@ -24,6 +24,11 @@ datasets:
       extract_to: spider
     train_splits: [train_spider, train_others]   # ONLY these DBs feed synthetic generation
     eval_splits: [dev, test]
+    exclude_dbs:
+      # Found by `make check-contamination`: BIRD re-uses this exact database (same name and
+      # schema fingerprint) in its dev set, so training on it would leak into BIRD Mini-Dev.
+      formula_1: "same database as bird_minidev/formula_1 (eval)"
+    exclude_empty_dbs: true   # 0-row DBs cannot execution-verify generated SQL
   bird_minidev:
     license: CC-BY-SA-4.0
     source:
@@ -33,7 +38,7 @@ datasets:
         # The official OSS mirror (bird-bench.oss-cn-beijing.aliyuncs.com/minidev.zip) is a
         # different build and stalls outside China, so it is not listed: one source, one hash.
         - https://drive.usercontent.google.com/download?id=13VLWIwpw5E3d5DUkMvzw7hvHE67a4XkG&export=download&confirm=t
-      sha256: null
+      sha256: aeb211c0e39010bbdae3838bb5e8bd27dc446ed77495b1709f85ccc9bf67f2be
       extract_to: bird_minidev
     eval_splits: [minidev_sqlite]
 

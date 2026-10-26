@@ -57,7 +57,7 @@ under Apache-2.0, matching the base model. We will repeat this in the README and
 ### 3.2 Splits and their roles
 
 ```
-Spider train DBs (~146) ──► teachers generate question→SQL ──► SFT / DPO training data
+Spider train DBs (138 usable) ──► teachers generate question→SQL ──► SFT / DPO training data
 Spider dev (1,034 q, 20 DBs) ──► model selection + all intermediate numbers
 BIRD Mini-Dev SQLite (500 q, 11 DBs) ──► secondary eval (out-of-domain, harder)
 Spider test (2,147 q, 40 DBs) ──► run ONCE at the end for the final table
@@ -77,6 +77,25 @@ questions as few-shot examples in the teacher prompt; those come from the train 
    collapse whitespace).
 4. A training question shares any **13-gram** with an eval question. This is the GPT-3 / Llama
    contamination test.
+5. A training question is a **near-duplicate** of an eval question: Jaccard similarity of word
+   3-grams ≥ 0.8. Spider questions are short (about 10 words), so most of them have no 13-gram at
+   all; this rule is what catches paraphrases.
+6. A training row uses a database that is **excluded** from training, or one that isn't in the registry.
+
+The check runs on the real data with `make check-contamination`, and must pass before any training
+run. CI runs its unit tests on synthetic SQLite fixtures, because the datasets are never committed.
+
+#### What the check found on the real data (2026-10-27)
+
+| Finding | Action |
+|---|---|
+| Spider *train* `formula_1` is the **same database** (same name and schema fingerprint) as BIRD Mini-Dev `formula_1` | Excluded from training in `configs/base.yaml`. Without the cross-dataset check this would have inflated our BIRD score. |
+| 7 Spider train DBs are **empty** (`academic`, `geo`, `imdb`, `restaurants`, `scholar`, `yelp`, `music_2`) | Excluded automatically: with 0 rows, generated SQL can't be execution-verified. |
+| BIRD `financial` has a table called `order` (an SQL keyword) | Schema rendering now quotes SQLite keywords, so prompts show `"order"`. |
+| Dry run with Spider's 7,000 train questions: 39 **exact** matches with eval questions, all generic ("How many books are there?") but on *different* databases | Kept strict. Phase 2 drops any flagged row before writing training or few-shot data. |
+| Near-duplicate similarity between 0.6 and 0.79 is all template collisions ("names of all the playlists" vs "...authors") | Threshold kept at 0.8. Nothing real sits above it except exact matches. |
+
+Final split: **138 train DBs, 71 eval DBs, 8 excluded**, and no overlap by name or schema.
 
 We cannot control what the teachers and the base model saw during pretraining (Spider has been
 public since 2018). We will state this limitation openly. This is the reason we also report
@@ -222,3 +241,7 @@ calculated from paid list prices. We never actually pay it.
 - 2026-10-26 — Base model `Qwen2.5-Coder-1.5B-Instruct`. Qwen3.5-2B kept as an optional ablation.
 - 2026-10-26 — Training data is synthetic only. Spider train questions are used only as few-shot exemplars.
 - 2026-10-26 — MLflow local file store for tracking.
+- 2026-10-27 — Exclude Spider `formula_1` from training: BIRD Mini-Dev reuses it (found by the contamination check).
+- 2026-10-27 — Exclude empty train DBs automatically (they can't execution-verify SQL).
+- 2026-10-27 — BIRD Mini-Dev comes from the Google Drive copy (`minidev_0703.zip`, sha256 pinned). The OSS mirror stalls outside China.
+- 2026-10-27 — Near-duplicate threshold 0.8, calibrated on Spider train vs eval questions.

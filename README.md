@@ -77,10 +77,15 @@ cp .env.example .env   # then add your free Groq / Gemini keys
 
 # 3. checks
 make test
+
+# 4. data (Phase 1): downloads ~1 GB, builds data/processed/ in about 5 s after download
+make data
+make check-contamination
 ```
 
-Pipeline commands (`make data`, `make generate`, `make eval`, `make serve`, …) are added phase by phase.
-Run `make help` to see them.
+Outputs: `data/processed/registry.json` (every DB with its train/eval/excluded role),
+`examples/` (all questions in one format), `schemas/` (per-DB schema + sample rows) and
+`reports/data_report.md`. Later pipeline commands are added phase by phase; run `make help`.
 
 ## Data and licences
 
@@ -95,8 +100,17 @@ Synthetic datasets derived from these databases are released under **CC BY-SA 4.
 No dataset files are committed to this repository.
 
 **No test-set contamination:** training data is generated only from Spider *train* databases.
-An automated check (`make check-contamination`, also in CI) fails if any eval database, schema or
-question appears in the training data.
+`make check-contamination` fails if any eval database, schema or question appears in the training
+data (it compares names, schema fingerprints, exact and near-duplicate questions, and 13-grams). CI
+runs the checker's unit tests. On the real data it caught one cross-dataset leak: Spider's
+*train* `formula_1` is the same database as BIRD Mini-Dev's `formula_1`. That database is excluded from training.
+
+| Split | Role | Questions | DBs |
+|---|---|---:|---:|
+| Spider train (`train_spider` + `train_others`) | databases for synthetic generation | (8,659 not used as labels) | 138 usable (8 excluded) |
+| Spider dev | eval: model selection | 1,034 | 20 |
+| Spider test | eval: final, run once | 2,147 | 40 |
+| BIRD Mini-Dev (SQLite) | eval: harder, out-of-domain | 500 | 11 |
 
 ## Design decisions
 

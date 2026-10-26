@@ -46,6 +46,10 @@ class DatasetConfig(_Strict):
     source: SourceConfig
     train_splits: list[str] = Field(default_factory=list)
     eval_splits: list[str] = Field(default_factory=list)
+    # Train-split databases that must never be trained on: db_id -> reason.
+    exclude_dbs: dict[str, str] = Field(default_factory=dict)
+    # Empty databases cannot execution-verify anything, so they are useless for training.
+    exclude_empty_dbs: bool = True
 
     @model_validator(mode="after")
     def _splits_disjoint(self) -> DatasetConfig:

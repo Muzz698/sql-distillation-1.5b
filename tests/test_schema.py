@@ -79,7 +79,14 @@ def test_missing_db_raises(tmp_path: Path) -> None:
 
 @pytest.mark.parametrize(
     ("name", "quoted"),
-    [("singer", "singer"), ("Order Items", '"Order Items"'), ('a"b', '"a""b"'), ("1x", '"1x"')],
+    [
+        ("singer", "singer"),
+        ("Order Items", '"Order Items"'),
+        ('a"b', '"a""b"'),
+        ("1x", '"1x"'),
+        ("order", '"order"'),  # keyword used as a table name in BIRD `financial`
+        ("Group", '"Group"'),
+    ],
 )
 def test_quote_ident(name: str, quoted: str) -> None:
     assert quote_ident(name) == quoted

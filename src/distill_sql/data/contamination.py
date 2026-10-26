@@ -9,6 +9,8 @@ Database level (the split itself):
 
 Row level (every JSONL file we train on or show to a teacher):
   * ``eval_db_in_train``      a training row points at an eval database
+  * ``excluded_db_in_train``  a training row points at a DB excluded from training (e.g. a
+                              Spider train DB that BIRD reuses for evaluation)
   * ``unknown_db_in_train``   a training row points at a DB that is not a registered train DB
   * ``exact_question``        an eval question appears verbatim (after normalisation)
   * ``ngram_overlap``         shares a word n-gram (default 13) with an eval question
@@ -129,10 +131,14 @@ def check(
 
     # ---- row level: databases ---------------------------------------------
     train_names = {d.db_id.lower() for d in train_dbs}
+    excluded = {d.db_id.lower(): d for d in registry.by_role("excluded")}
     for row in train_rows:
         db = row.db_id.lower()
         if db in eval_names:
             report.add(Finding("eval_db_in_train", f"{row.source}: db_id={row.db_id}"))
+        elif db in excluded:
+            reason = excluded[db].note
+            report.add(Finding("excluded_db_in_train", f"{row.source}: {row.db_id} ({reason})"))
         elif db not in train_names:
             report.add(Finding("unknown_db_in_train", f"{row.source}: db_id={row.db_id}"))
 

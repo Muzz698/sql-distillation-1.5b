@@ -3,7 +3,7 @@
 Outputs under ``paths.processed_dir``:
   examples/<dataset>/<split>.jsonl   every question in a common format
   schemas/<dataset>/<db_id>.json     extracted schema per database
-  registry.json                      every database with role (train/eval) and fingerprint
+  registry.json                      every database with role (train/eval/excluded) + fingerprint
   manifest.json                      archive hashes and counts (what produced these files)
   reports/data_report.md             human-readable stats
 """
@@ -47,6 +47,15 @@ def _split_roles(cfg: AppConfig) -> list[tuple[str, str, Role]]:
     return out
 
 
+def _exclusion_reason(cfg: AppConfig, dataset: str, db_id: str, n_rows: int) -> str | None:
+    ds = cfg.datasets[dataset]
+    if db_id in ds.exclude_dbs:
+        return ds.exclude_dbs[db_id]
+    if ds.exclude_empty_dbs and n_rows == 0:
+        return "empty database: generated SQL cannot be execution-verified"
+    return None
+
+
 def prepare(cfg: AppConfig, root: Path) -> Registry:
     processed = cfg.paths.processed_dir
     examples_by_split: dict[tuple[str, str], list[Example]] = {}
@@ -83,17 +92,20 @@ def prepare(cfg: AppConfig, root: Path) -> Registry:
             continue
         write_json(processed / "schemas" / dataset / f"{db_id}.json", schema.model_dump())
         schemas.append(schema)
+        n_rows = sum(t.row_count for t in schema.tables)
+        note = _exclusion_reason(cfg, dataset, db_id, n_rows) if role == "train" else None
         entries.append(
             DatabaseEntry(
                 dataset=dataset,
                 db_id=db_id,
-                role=role,
+                role="excluded" if note else role,
+                note=note,
                 splits=splits,
                 path=str(path.relative_to(root)),
                 fingerprint=schema.fingerprint,
                 n_tables=len(schema.tables),
                 n_columns=schema.n_columns,
-                n_rows=sum(t.row_count for t in schema.tables),
+                n_rows=n_rows,
             )
         )
     if failures:
@@ -146,12 +158,22 @@ def render_report(examples: dict[tuple[str, str], list[Example]], registry: Regi
     ]
     for (dataset, split), exs in examples.items():
         dbs = by_split[(dataset, split)]
-        role = dbs[0].role if dbs else "?"
+        role = "eval" if any(d.role == "eval" for d in dbs) else "train"
         lines.append(
             f"| {dataset} | {split} | {role} | {len(exs):,} | {len(dbs)} "
             f"| {mean(d.n_tables for d in dbs):.1f} | {mean(d.n_columns for d in dbs):.1f} "
             f"| {median(d.n_rows for d in dbs):,.0f} |"
         )
     n_train, n_eval = len(registry.by_role("train")), len(registry.by_role("eval"))
-    lines += ["", f"Unique databases: **{n_train} train**, **{n_eval} eval**.", ""]
+    excluded = registry.by_role("excluded")
+    lines += [
+        "",
+        f"Unique databases: **{n_train} train**, **{n_eval} eval**, "
+        f"**{len(excluded)} excluded** from training.",
+        "",
+    ]
+    if excluded:
+        lines += ["## Excluded training databases", "", "| Database | Reason |", "|---|---|"]
+        lines += [f"| {d.key} | {d.note} |" for d in excluded]
+        lines.append("")
     return "\n".join(lines)

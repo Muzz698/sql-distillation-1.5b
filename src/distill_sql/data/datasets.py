@@ -1,8 +1,9 @@
 """Load Spider / BIRD Mini-Dev into one common format, and the database registry.
 
 Every question becomes an :class:`Example`; every SQLite file becomes a :class:`DatabaseEntry`
-with a ``role`` of ``train`` or ``eval``. Later phases only ever ask the registry for
-``train`` databases, which is what keeps evaluation databases out of training.
+with a ``role`` of ``train``, ``eval`` or ``excluded``. Later phases only ever ask the
+registry for ``train`` databases, which is what keeps evaluation databases out of training.
+``excluded`` databases come from a training split but must not be trained on (see ``note``).
 """
 
 from __future__ import annotations
@@ -16,8 +17,8 @@ from pydantic import BaseModel
 
 from distill_sql.utils.io import read_json
 
-Role = Literal["train", "eval"]
-ROLES: tuple[Role, ...] = ("train", "eval")
+Role = Literal["train", "eval", "excluded"]
+ROLES: tuple[Role, ...] = ("train", "eval", "excluded")
 
 
 class Example(BaseModel):
@@ -41,6 +42,7 @@ class DatabaseEntry(BaseModel):
     n_tables: int
     n_columns: int
     n_rows: int
+    note: str | None = None  # why an `excluded` database is excluded
 
     @property
     def key(self) -> str:

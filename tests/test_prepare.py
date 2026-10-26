@@ -64,3 +64,32 @@ def test_prepare_refuses_db_shared_by_train_and_eval(tmp_path: Path) -> None:
     )
     with pytest.raises(SplitLeakError, match="pets_1"):
         prepare(cfg, tmp_path)
+
+
+def test_prepare_excludes_empty_and_configured_train_dbs(tmp_path: Path) -> None:
+    cfg = _cfg(tmp_path)
+    spider = cfg.datasets["spider"].model_copy(
+        update={"exclude_dbs": {"pets_copy": "same database as an eval DB"}}
+    )
+    cfg = cfg.model_copy(update={"datasets": {"spider": spider}})
+    make_spider_layout(
+        cfg.paths.raw_dir / "spider",
+        {
+            "train_spider": [
+                ("pets_1", "How many pets?", "SELECT count(*) FROM pets"),
+                ("pets_copy", "How many pets?", "SELECT count(*) FROM pets"),
+                ("empty_1", "How many rows?", "SELECT count(*) FROM t"),
+            ],
+            "dev": [("concert_singer", "How many singers?", "SELECT count(*) FROM singer")],
+        },
+    )
+    registry = prepare(cfg, tmp_path)
+
+    by_id = {d.db_id: d for d in registry.databases}
+    assert [d.db_id for d in registry.by_role("train")] == ["pets_1"]
+    assert by_id["pets_copy"].role == "excluded"
+    assert by_id["pets_copy"].note == "same database as an eval DB"
+    assert by_id["empty_1"].role == "excluded"
+    assert "empty database" in (by_id["empty_1"].note or "")
+    report = (cfg.paths.processed_dir / "reports" / "data_report.md").read_text()
+    assert "**2 excluded**" in report
