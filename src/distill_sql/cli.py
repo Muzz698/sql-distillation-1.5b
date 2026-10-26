@@ -156,7 +156,7 @@ def gen_models(config: ConfigOpt = DEFAULT_CONFIG) -> None:
             continue
         rprint(f"[bold]{teacher.provider}[/] ({len(models)} models)")
         for m in models:
-            used = any(t.model == m for t in cfg.teachers)
+            used = any(t.model == m.removeprefix("models/") for t in cfg.teachers)
             rprint(f"  {'[green]✓[/] ' if used else '  '}{m}")
 
 

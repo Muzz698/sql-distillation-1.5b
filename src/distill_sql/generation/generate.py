@@ -177,6 +177,7 @@ def run_teacher(
             "model": completion.model,
             "prompt_tokens": completion.prompt_tokens,
             "completion_tokens": completion.completion_tokens,
+            "reasoning_tokens": completion.reasoning_tokens,
             "latency_s": completion.latency_s,
             "cached": completion.cached,
         }

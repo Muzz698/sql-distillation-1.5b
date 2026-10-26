@@ -27,6 +27,7 @@ def call_stats(output_dir: Path, teacher: str) -> dict[str, Any]:
         "parse_errors": sum(r["status"] == "parse_error" for r in rows),
         "prompt_tokens": sum(r.get("prompt_tokens", 0) for r in rows),
         "completion_tokens": sum(r.get("completion_tokens", 0) for r in rows),
+        "reasoning_tokens": sum(r.get("reasoning_tokens", 0) for r in rows),
         "median_latency_s": round(median(r["latency_s"] for r in live), 2) if live else None,
     }
 
@@ -48,7 +49,7 @@ def build_stats(
         if t.price_input_per_m is not None and t.price_output_per_m is not None:
             cost = (
                 calls["prompt_tokens"] * t.price_input_per_m
-                + calls["completion_tokens"] * t.price_output_per_m
+                + (calls["completion_tokens"] + calls["reasoning_tokens"]) * t.price_output_per_m
             ) / 1e6
         mine = [k for k in kept if k.teacher == t.name]
         checked = [k for k in mine if k.agreement is not None]
@@ -104,7 +105,7 @@ def render_markdown(s: dict[str, Any], kept: list[TrainExample], seed: int) -> s
         "",
         "## By teacher",
         "",
-        "| Teacher | Model | Calls | Tokens in / out | Raw pairs | Kept | Keep rate "
+        "| Teacher | Model | Calls | Tokens in / out (+thinking) | Raw pairs | Kept | Keep rate "
         "| Agreement | Cost at list price |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
@@ -117,7 +118,8 @@ def render_markdown(s: dict[str, Any], kept: list[TrainExample], seed: int) -> s
         cost = f"${t['list_price_cost_usd']:.3f}" if t["list_price_cost_usd"] is not None else "-"
         out.append(
             f"| {name} | `{t['model']}` | {t['calls']:,} | {t['prompt_tokens']:,} / "
-            f"{t['completion_tokens']:,} | {t['raw_pairs']:,} | {t['kept']:,} "
+            f"{t['completion_tokens']:,} (+{t['reasoning_tokens']:,}) | {t['raw_pairs']:,} "
+            f"| {t['kept']:,} "
             f"| {_pct(t['kept'], t['raw_pairs'])} | {agree} | {cost} |"
         )
     out += ["", "Actual spend: **$0** (free tiers).", "", "## Why pairs were rejected", ""]

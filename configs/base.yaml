@@ -75,7 +75,11 @@ teachers:
     tpd: 200000
   - name: gemini-flash
     provider: gemini
-    model: gemini-2.5-flash
+    # gemini-2.5-flash returns 404 for new keys (checked 2026-10-27). 3.7/3.8-flash exist but
+    # were overloaded (503); 3.6-flash answered reliably. Pinned, not `gemini-flash-latest`,
+    # so results stay reproducible.
+    model: gemini-3.6-flash
+    extra_body: {reasoning_effort: low}   # default thinking used ~20x the visible tokens
     rpm: 10
     tpm: 250000
     rpd: 250
@@ -86,7 +90,7 @@ generation:
   calls_per_db: 6          # per teacher; 138 DBs x 6 = 828 calls per teacher for a full pass
   fewshot_per_db: 3        # Spider *train* questions for the same DB, decontaminated
   temperature: 0.8
-  max_tokens: 4096
+  max_tokens: 2048         # pilot: real output 500-900 tok (+ Gemini thinking); Groq counts this toward TPM
   focuses:                 # one per call, rotated per DB so every pattern is covered
     - simple lookups on one table with WHERE filters, ORDER BY and LIMIT
     - aggregation with COUNT/SUM/AVG/MIN/MAX, GROUP BY and HAVING

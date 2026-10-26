@@ -50,10 +50,13 @@ class Completion:
     completion_tokens: int
     latency_s: float
     cached: bool
+    # Hidden "thinking" tokens. Some providers (Gemini) bill and rate-limit them but leave
+    # them out of completion_tokens, so they only show up in usage.total_tokens.
+    reasoning_tokens: int = 0
 
     @property
     def total_tokens(self) -> int:
-        return self.prompt_tokens + self.completion_tokens
+        return self.prompt_tokens + self.completion_tokens + self.reasoning_tokens
 
 
 def estimate_tokens(messages: list[Message]) -> int:
@@ -169,13 +172,17 @@ class TeacherClient:
         except (KeyError, IndexError) as exc:
             raise TeacherError(f"{self.teacher.name}: unexpected response shape: {data}") from exc
         usage = data.get("usage") or {}
+        prompt = int(usage.get("prompt_tokens", 0))
+        completion = int(usage.get("completion_tokens", 0))
+        total = int(usage.get("total_tokens", 0))
         return Completion(
             text=text,
             model=data.get("model", self.teacher.model),
-            prompt_tokens=int(usage.get("prompt_tokens", 0)),
-            completion_tokens=int(usage.get("completion_tokens", 0)),
+            prompt_tokens=prompt,
+            completion_tokens=completion,
             latency_s=round(latency, 3),
             cached=False,
+            reasoning_tokens=max(0, total - prompt - completion),
         )
 
     def list_models(self) -> list[str]:

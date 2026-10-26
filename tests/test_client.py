@@ -127,3 +127,19 @@ def test_missing_or_empty_key_gives_a_clear_error(value: str | None) -> None:
     secrets = Secrets(groq_api_key=SecretStr(value) if value is not None else None)
     with pytest.raises(TeacherError, match="GROQ_API_KEY is empty or not set"):
         api_key_for("groq", secrets)
+
+
+def test_hidden_reasoning_tokens_count_toward_limits(tmp_path: Path) -> None:
+    # Gemini bills "thinking" in total_tokens but not in completion_tokens.
+    resp = httpx.Response(
+        200,
+        json={
+            "choices": [{"message": {"content": "SELECT 1"}}],
+            "usage": {"prompt_tokens": 17, "completion_tokens": 6, "total_tokens": 151},
+        },
+    )
+    client, _ = make(tmp_path, lambda req: resp)
+    completion = client.complete(MESSAGES)
+    assert completion.reasoning_tokens == 128
+    assert completion.total_tokens == 151
+    assert client.limiter.tokens_today == 151

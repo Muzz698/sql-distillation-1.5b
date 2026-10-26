@@ -178,6 +178,23 @@ and we compare the *results*. If they match, the pair is marked `agreement=true`
 highest-quality tier. Disagreements are kept but marked `false`, because we don't know which side
 is wrong; Phase 4 decides whether to filter or down-weight them.
 
+#### Pilot results (2026-10-27, 3 calls per teacher)
+
+| Teacher | Raw | Kept | Keep rate | Cross-check agreement |
+|---|---:|---:|---:|---:|
+| `openai/gpt-oss-120b` (Groq) | 24 | 17 | 71% | 71% of 14 |
+| `qwen/qwen3.8-27b` (Groq) | 24 | 20 | 83% | 90% of 20 |
+| `gemini-3.6-flash` | 24 | 23 | 96% | 78% of 23 |
+| **Total** | **72** | **60** | **83%** | **46 agree, 11 disagree, 3 unchecked** |
+
+- Rejections: 10 empty results, 2 parse errors. Both parse errors are also invalid in SQLite
+  itself (an extra `)` and `XOR`), so there were no false rejections.
+- The cross-check caught semantic bugs that execution can't: "Which **students**..." answered with
+  only a city code, and "activities with more than two participants" implemented as "students in
+  more than two activities". Some disagreements are checker mistakes (e.g. `DISTINCT` handling),
+  so disagreeing pairs are flagged, not deleted.
+- Real cost per call: about 1,000–2,100 prompt tokens and 500–870 output tokens, in 1–8 s.
+
 Rejected pairs keep their SQL and reason in `data/processed/rejected/`. Pairs that ran but were
 wrong are candidates for DPO "rejected" answers in Phase 5.
 
@@ -270,5 +287,12 @@ calculated from paid list prices. We never actually pay it.
 - 2026-10-27 — One OpenAI-compatible HTTP client for Groq and Gemini (no vendor SDKs). The disk
   cache is keyed by the full request, and daily usage is saved to disk so limits survive restarts.
 - 2026-10-27 — Prompts include real values of low-variety columns, to cut empty-result rejections.
+- 2026-10-27 — Gemini teacher is `gemini-3.6-flash` with `reasoning_effort: low`. `gemini-2.5-flash`
+  returns 404 for new keys, and 3.7/3.8-flash were overloaded (503). Default thinking used ~20x the
+  visible output tokens.
+- 2026-10-27 — Hidden reasoning tokens (in `total_tokens` but not `completion_tokens`) now count
+  toward rate limits and list-price cost.
+- 2026-10-27 — `max_tokens` lowered from 4096 to 2048: Groq appears to reserve `max_tokens` against
+  TPM, which caused a 429 in the pilot. Real output is under 900 tokens.
 - 2026-10-27 — Spider exemplars have known label noise (e.g. a self-join `T2.actid = T2.actid`).
   They are only style hints in prompts; labels always come from verified teacher output.
