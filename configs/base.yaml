@@ -1,0 +1,76 @@
+# Shared defaults. Phase-specific configs extend this file via `extends:`.
+# All paths are relative to the project root unless absolute.
+seed: 42
+
+paths:
+  data_dir: data
+  raw_dir: data/raw
+  processed_dir: data/processed
+  cache_dir: data/cache        # teacher API responses (sha256-keyed)
+  runs_dir: runs               # one folder per run: config + metrics + git sha
+
+model:
+  base_id: Qwen/Qwen2.5-Coder-1.5B-Instruct
+  # Optional ablation (Phase 4+): Qwen/Qwen3.5-2B
+
+datasets:
+  spider:
+    license: CC-BY-SA-4.0
+    source:
+      filename: spider_data.zip
+      urls:
+        - https://drive.usercontent.google.com/download?id=1403EGqzIDoHMdQF4c9Bkyl7dZLZ5Wt6J&export=download&confirm=t
+      sha256: 00636695dabed6b5f4b8328a16b13e069a2f16591d5efcce57660669c85b121b
+      extract_to: spider
+    train_splits: [train_spider, train_others]   # ONLY these DBs feed synthetic generation
+    eval_splits: [dev, test]
+  bird_minidev:
+    license: CC-BY-SA-4.0
+    source:
+      filename: bird_minidev.zip
+      urls:
+        # Google Drive copy (minidev_0703.zip) linked from github.com/bird-bench/mini_dev.
+        # The official OSS mirror (bird-bench.oss-cn-beijing.aliyuncs.com/minidev.zip) is a
+        # different build and stalls outside China, so it is not listed: one source, one hash.
+        - https://drive.usercontent.google.com/download?id=13VLWIwpw5E3d5DUkMvzw7hvHE67a4XkG&export=download&confirm=t
+      sha256: null
+      extract_to: bird_minidev
+    eval_splits: [minidev_sqlite]
+
+schema_extraction:
+  sample_rows: 3          # example rows shown per table in prompts
+  max_value_chars: 60     # long text cells are truncated in prompts
+
+contamination:
+  ngram_n: 13             # GPT-3 / Llama-style n-gram overlap test
+  near_dup_shingle_n: 3   # word 3-grams for near-duplicate (Jaccard) matching
+  near_dup_jaccard: 0.8
+  train_globs:
+    - data/processed/train/**/*.jsonl    # synthetic SFT/DPO data (Phase 2+)
+    - data/processed/fewshot/*.jsonl     # few-shot exemplars shown to teachers
+
+teachers:
+  - name: groq-gpt-oss-120b
+    provider: groq
+    model: openai/gpt-oss-120b
+    rpm: 30
+    tpm: 8000
+    rpd: 1000
+  - name: groq-qwen3.8-27b
+    provider: groq
+    model: qwen/qwen3.8-27b
+    rpm: 30
+    tpm: 8000
+    rpd: 1000
+  - name: gemini-flash
+    provider: gemini
+    model: gemini-2.5-flash
+    # Google shows free-tier limits per account in AI Studio. Set these to match yours.
+    rpm: 10
+    tpm: 250000
+    rpd: 250
+
+tracking:
+  backend: mlflow
+  mlflow_uri: file:./mlruns
+  experiment: distill-sql

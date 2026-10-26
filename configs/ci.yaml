@@ -1,0 +1,9 @@
+extends: base.yaml
+
+# CI eval regression gate: re-scores saved predictions on a fixed Spider-dev subset.
+# Fixture files are created in Phase 3; until then the CI step is skipped.
+eval_regression:
+  predictions_file: tests/fixtures/eval_subset/predictions.jsonl
+  gold_file: tests/fixtures/eval_subset/gold.jsonl
+  db_dir: tests/fixtures/eval_subset/databases
+  min_execution_accuracy: 0.0   # raised to the real baseline in Phase 3
