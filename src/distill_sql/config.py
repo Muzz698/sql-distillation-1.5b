@@ -74,12 +74,39 @@ class ContaminationConfig(_Strict):
 
 
 class TeacherConfig(_Strict):
-    name: str
+    name: str = Field(pattern=r"^[a-z0-9][a-z0-9._-]*$")  # also used as a file name
     provider: Literal["groq", "gemini"]
     model: str
+    # Free-tier limits. The limiter stays under them; `tpd` is optional (Gemini has none).
     rpm: int = Field(gt=0)
     tpm: int = Field(gt=0)
     rpd: int = Field(gt=0)
+    tpd: int | None = Field(default=None, gt=0)
+    # Provider-specific request fields, e.g. {"reasoning_effort": "low"} to save tokens.
+    extra_body: dict[str, Any] = Field(default_factory=dict)
+    # Paid list prices (USD per 1M tokens). Used only to report "what this would cost".
+    price_input_per_m: float | None = Field(default=None, ge=0)
+    price_output_per_m: float | None = Field(default=None, ge=0)
+
+
+class GenerationConfig(_Strict):
+    output_dir: Path = Path("data/interim/generated")
+    pairs_per_call: int = Field(default=8, ge=1, le=20)
+    calls_per_db: int = Field(default=6, ge=1)
+    fewshot_per_db: int = Field(default=3, ge=0, le=10)
+    temperature: float = Field(default=0.8, ge=0.0, le=2.0)
+    max_tokens: int = Field(default=4096, ge=256)
+    # Each call gets one focus, cycled per DB, so the data covers many SQL patterns.
+    focuses: list[str] = Field(min_length=1)
+
+
+class VerificationConfig(_Strict):
+    timeout_s: float = Field(default=5.0, gt=0)
+    max_result_rows: int = Field(default=10_000, ge=1)  # more rows usually means a bad JOIN
+    min_question_words: int = Field(default=4, ge=1)
+    max_question_words: int = Field(default=60, ge=5)
+    # Cross-check: a second teacher answers kept questions; matching results = `agreement`.
+    crosscheck_batch_size: int = Field(default=10, ge=1, le=25)
 
 
 class TrackingConfig(_Strict):
@@ -103,7 +130,16 @@ class AppConfig(_Strict):
     teachers: list[TeacherConfig]
     schema_extraction: SchemaConfig = SchemaConfig()
     contamination: ContaminationConfig = ContaminationConfig()
+    generation: GenerationConfig | None = None
+    verification: VerificationConfig = VerificationConfig()
     tracking: TrackingConfig = TrackingConfig()
+
+    def teacher(self, name: str) -> TeacherConfig:
+        for t in self.teachers:
+            if t.name == name:
+                return t
+        raise KeyError(f"unknown teacher {name!r}; configured: {[t.name for t in self.teachers]}")
+
     eval_regression: EvalRegressionConfig | None = None
 
 
@@ -140,4 +176,8 @@ def _read_yaml(path: Path) -> dict[str, Any]:
 def load_config(path: str | Path, root: Path = PROJECT_ROOT) -> AppConfig:
     """Load a YAML config (following ``extends:``), validate it, and anchor paths at ``root``."""
     cfg = AppConfig.model_validate(_read_yaml(Path(path)))
-    return cfg.model_copy(update={"paths": cfg.paths.resolved(root)})
+    update: dict[str, Any] = {"paths": cfg.paths.resolved(root)}
+    if cfg.generation and not cfg.generation.output_dir.is_absolute():
+        gen = cfg.generation.model_copy(update={"output_dir": root / cfg.generation.output_dir})
+        update["generation"] = gen
+    return cfg.model_copy(update=update)

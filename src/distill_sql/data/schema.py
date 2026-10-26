@@ -140,6 +140,35 @@ def _to_prompt_value(value: Any, max_chars: int) -> Any:
     return value
 
 
+def column_value_hints(
+    db_path: Path, schema: DatabaseSchema, max_distinct: int = 12, max_chars: int = 30
+) -> dict[str, list[str]]:
+    """Distinct values of low-cardinality text columns, as ``{"table.column": [...]}``.
+
+    Shown to the teacher so filters use values that exist ("United States", not "USA"),
+    which raises the share of generated queries that return rows.
+    """
+    hints: dict[str, list[str]] = {}
+    conn = connect_readonly(db_path)
+    try:
+        for table in schema.tables:
+            for col in table.columns:
+                if "CHAR" not in col.type.upper() and "TEXT" not in col.type.upper():
+                    continue
+                q_col, q_tab = quote_ident(col.name), quote_ident(table.name)
+                rows = conn.execute(
+                    f"SELECT DISTINCT {q_col} FROM {q_tab} WHERE {q_col} IS NOT NULL "
+                    f"AND {q_col} != '' LIMIT ?",
+                    (max_distinct + 1,),
+                ).fetchall()
+                values = [str(r[0]) for r in rows]
+                if 0 < len(values) <= max_distinct and all(len(v) <= max_chars for v in values):
+                    hints[f"{table.name}.{col.name}"] = values
+    finally:
+        conn.close()
+    return hints
+
+
 def extract_schema(
     db_path: Path,
     dataset: str,

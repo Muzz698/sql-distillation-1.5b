@@ -4,7 +4,7 @@ CONFIG ?= configs/base.yaml
 UV := uv run
 
 .PHONY: help install lint format typecheck test check ci-eval \
-        data check-contamination generate verify train-notebook eval serve demo clean
+        data check-contamination generate-dry generate verify crosscheck train-notebook eval serve demo clean
 
 help: ## Show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -37,11 +37,22 @@ data: ## Download Spider + BIRD Mini-Dev (~1 GB), extract schemas, build the reg
 check-contamination: ## Fail if any eval DB/schema/question leaks into training data
 	$(UV) distill-sql data check-contamination --config $(CONFIG)
 
-generate: ## [Phase 2] Generate question->SQL pairs with teacher models
-	@echo "Not implemented yet (Phase 2)"; exit 1
+TEACHER ?=
+MAX_CALLS ?=
+CHECKER ?= gemini-flash
+GEN_ARGS = $(if $(TEACHER),--teacher $(TEACHER)) $(if $(MAX_CALLS),--max-calls $(MAX_CALLS))
 
-verify: ## [Phase 2] Execute and filter generated SQL, write stats report
-	@echo "Not implemented yet (Phase 2)"; exit 1
+generate-dry: ## Show an example teacher prompt and the rate-limit budget (no API calls)
+	$(UV) distill-sql gen run --dry-run --config $(CONFIG) $(GEN_ARGS)
+
+generate: ## Generate question->SQL pairs with teachers (resumable; TEACHER=, MAX_CALLS=)
+	$(UV) distill-sql gen run --config $(CONFIG) $(GEN_ARGS)
+
+verify: ## Execute + filter + dedupe generated SQL; write sft.jsonl and the data report
+	$(UV) distill-sql gen verify --config $(CONFIG)
+
+crosscheck: ## Second teacher re-answers kept questions (CHECKER=, MAX_CALLS=)
+	$(UV) distill-sql gen crosscheck --checker $(CHECKER) --config $(CONFIG) $(if $(MAX_CALLS),--max-calls $(MAX_CALLS))
 
 train-notebook: ## [Phase 4] Print instructions for the Kaggle training notebook
 	@echo "Not implemented yet (Phase 4)"; exit 1

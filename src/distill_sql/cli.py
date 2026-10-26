@@ -11,11 +11,13 @@ from rich import print as rprint
 from rich.logging import RichHandler
 from rich.table import Table
 
-from distill_sql.config import PROJECT_ROOT, AppConfig, load_config
+from distill_sql.config import PROJECT_ROOT, AppConfig, Secrets, TeacherConfig, load_config
 
 app = typer.Typer(no_args_is_help=True, help="Distill-SQL pipeline commands.")
 data_app = typer.Typer(no_args_is_help=True, help="Phase 1: datasets, schemas, contamination.")
 app.add_typer(data_app, name="data")
+gen_app = typer.Typer(no_args_is_help=True, help="Phase 2: teacher generation + verification.")
+app.add_typer(gen_app, name="gen")
 
 ConfigOpt = Annotated[Path, typer.Option("--config", "-c", help="YAML config file.")]
 DEFAULT_CONFIG = Path("configs/base.yaml")
@@ -119,6 +121,145 @@ def data_check_contamination(
         rprint("[red bold]✗ contamination check FAILED[/]")
         raise typer.Exit(1)
     rprint("[green bold]✓ contamination check passed[/]")
+
+
+# ---- Phase 2 -----------------------------------------------------------------
+TeacherOpt = Annotated[
+    list[str] | None,
+    typer.Option("--teacher", "-t", help="Teacher name(s) from the config. Default: all."),
+]
+MaxCallsOpt = Annotated[
+    int | None, typer.Option(help="Stop each teacher after N API calls (for pilots).")
+]
+
+
+def _teachers(cfg: AppConfig, names: list[str] | None) -> list[TeacherConfig]:
+    return [cfg.teacher(n) for n in names] if names else list(cfg.teachers)
+
+
+@gen_app.command("models")
+def gen_models(config: ConfigOpt = DEFAULT_CONFIG) -> None:
+    """List the model ids each provider key can use (to fill in `teachers:`)."""
+    from distill_sql.generation.pipeline import build_context, make_client
+
+    cfg = _cfg(config)
+    ctx = build_context(cfg, PROJECT_ROOT)
+    seen: set[str] = set()
+    for teacher in cfg.teachers:
+        if teacher.provider in seen:
+            continue
+        seen.add(teacher.provider)
+        try:
+            models = make_client(ctx, teacher, Secrets()).list_models()
+        except Exception as exc:
+            rprint(f"[red]{teacher.provider}: {exc}[/]")
+            continue
+        rprint(f"[bold]{teacher.provider}[/] ({len(models)} models)")
+        for m in models:
+            used = any(t.model == m for t in cfg.teachers)
+            rprint(f"  {'[green]✓[/] ' if used else '  '}{m}")
+
+
+@gen_app.command("run")
+def gen_run(
+    config: ConfigOpt = DEFAULT_CONFIG,
+    teacher: TeacherOpt = None,
+    max_calls: MaxCallsOpt = None,
+    dry_run: Annotated[
+        bool, typer.Option(help="Print a prompt and a budget; no API calls.")
+    ] = False,
+) -> None:
+    """Generate question/SQL pairs with the teachers (resumable; safe to re-run daily)."""
+    from distill_sql.generation.generate import estimate_budget, plan_tasks
+    from distill_sql.generation.pipeline import build_context, generate
+    from distill_sql.utils.runs import Run
+
+    cfg = _cfg(config)
+    ctx = build_context(cfg, PROJECT_ROOT)
+    teachers = _teachers(cfg, teacher)
+    if dry_run:
+        tasks = plan_tasks(teachers[0].name, ctx.registry, ctx.gen)
+        rprint("[bold]Example prompt[/] (first task):\n")
+        for m in ctx.prompts.messages(tasks[0]):
+            rprint(f"[cyan]--- {m['role']} ---[/]\n{m['content']}\n")
+        table = Table(title="Full-pass budget estimate (per teacher)")
+        for col in ("teacher", "calls", "~tok/call", "~calls/day", "~days", "raw pairs"):
+            table.add_column(col)
+        for t in teachers:
+            b = estimate_budget(t, plan_tasks(t.name, ctx.registry, ctx.gen), ctx.prompts, ctx.gen)
+            table.add_row(
+                t.name,
+                str(b["calls"]),
+                str(b["est_tokens_per_call"]),
+                str(b["est_calls_per_day"]),
+                str(b["est_days"]),
+                f"{b['est_raw_pairs']:,}",
+            )
+        rprint(table)
+        return
+
+    run = Run(cfg, "generate", {"teachers": [t.name for t in teachers], "max_calls": max_calls})
+    summaries = generate(ctx, teachers, Secrets(), max_calls)
+    table = Table(title="Generation run")
+    for col in (
+        "teacher",
+        "done before",
+        "calls",
+        "cached",
+        "pairs",
+        "parse err",
+        "tokens",
+        "stopped",
+    ):
+        table.add_column(col)
+    for s in summaries:
+        table.add_row(
+            s.teacher,
+            str(s.skipped_done),
+            str(s.calls),
+            str(s.cached),
+            str(s.pairs),
+            str(s.parse_errors),
+            f"{s.tokens:,}",
+            s.stopped_reason or "finished",
+        )
+    rprint(table)
+    run.log_metrics({s.teacher: s.__dict__ for s in summaries})
+    rprint("Next: [bold]make verify[/] (and re-run this command tomorrow if a daily limit hit).")
+
+
+@gen_app.command("verify")
+def gen_verify(config: ConfigOpt = DEFAULT_CONFIG) -> None:
+    """Execute every generated pair, filter, dedupe, decontaminate; write sft.jsonl + report."""
+    from distill_sql.generation.pipeline import build_context, verify
+    from distill_sql.utils.runs import Run
+
+    cfg = _cfg(config)
+    ctx = build_context(cfg, PROJECT_ROOT)
+    run = Run(cfg, "verify")
+    stats = verify(ctx)
+    run.log_metrics(stats)
+    rprint((cfg.paths.processed_dir / "reports" / "generation_report.md").read_text())
+    rprint(f"[green]✓[/] {stats['n_kept']:,} pairs → {ctx.sft_file.relative_to(PROJECT_ROOT)}")
+
+
+@gen_app.command("crosscheck")
+def gen_crosscheck(
+    checker: Annotated[str, typer.Option(help="Teacher that re-answers the kept questions.")],
+    config: ConfigOpt = DEFAULT_CONFIG,
+    max_calls: MaxCallsOpt = None,
+) -> None:
+    """Have a second teacher answer kept questions; matching results mark `agreement`."""
+    from distill_sql.generation.pipeline import build_context, crosscheck
+
+    cfg = _cfg(config)
+    ctx = build_context(cfg, PROJECT_ROOT)
+    s = crosscheck(ctx, cfg.teacher(checker), Secrets(), max_calls)
+    rate = f"{100 * s.agreed / s.checked:.1f}%" if s.checked else "-"
+    rprint(f"{checker}: {s.checked} checked, {s.agreed} agree ({rate}), {s.calls} calls")
+    if s.stopped_reason:
+        rprint(f"[yellow]stopped: {s.stopped_reason}[/]")
+    rprint("Next: [bold]make verify[/] to fold agreement into sft.jsonl and the report.")
 
 
 if __name__ == "__main__":

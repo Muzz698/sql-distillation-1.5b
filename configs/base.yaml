@@ -55,25 +55,54 @@ contamination:
     - data/processed/fewshot/*.jsonl     # few-shot exemplars shown to teachers
 
 teachers:
+  # Free-tier limits as shown on 2026-10-26; check console.groq.com/settings/limits and
+  # aistudio.google.com/rate-limit for your account and edit here. `distill-sql gen models`
+  # lists the model ids your keys can actually use.
   - name: groq-gpt-oss-120b
     provider: groq
     model: openai/gpt-oss-120b
     rpm: 30
     tpm: 8000
     rpd: 1000
+    tpd: 200000
+    extra_body: {reasoning_effort: low}   # reasoning tokens count against TPD
   - name: groq-qwen3.8-27b
     provider: groq
     model: qwen/qwen3.8-27b
     rpm: 30
     tpm: 8000
     rpd: 1000
+    tpd: 200000
   - name: gemini-flash
     provider: gemini
     model: gemini-2.5-flash
-    # Google shows free-tier limits per account in AI Studio. Set these to match yours.
     rpm: 10
     tpm: 250000
     rpd: 250
+
+generation:
+  output_dir: data/interim/generated   # raw teacher output, append-only, one file per teacher
+  pairs_per_call: 8
+  calls_per_db: 6          # per teacher; 138 DBs x 6 = 828 calls per teacher for a full pass
+  fewshot_per_db: 3        # Spider *train* questions for the same DB, decontaminated
+  temperature: 0.8
+  max_tokens: 4096
+  focuses:                 # one per call, rotated per DB so every pattern is covered
+    - simple lookups on one table with WHERE filters, ORDER BY and LIMIT
+    - aggregation with COUNT/SUM/AVG/MIN/MAX, GROUP BY and HAVING
+    - joins across two or three tables using the foreign keys
+    - nested subqueries (IN, NOT IN, EXISTS, or comparison with an aggregate such as above average)
+    - set operations (UNION, INTERSECT, EXCEPT) and "which X have no Y" questions
+    - superlatives and ranking (the most, the least, top 3), with COUNT(DISTINCT ...)
+    - text and range conditions (LIKE, BETWEEN, comparisons on dates or numbers) combined with joins
+    - harder multi-step questions combining joins, grouping and a subquery
+
+verification:
+  timeout_s: 5
+  max_result_rows: 10000
+  min_question_words: 4
+  max_question_words: 60
+  crosscheck_batch_size: 10
 
 tracking:
   backend: mlflow

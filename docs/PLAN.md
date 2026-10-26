@@ -117,8 +117,12 @@ BIRD Mini-Dev and the later-released Spider test set.
 - **Disk cache keyed by sha256(provider, model, prompt, params).** A re-run never pays twice.
 - **Resumable jobs.** Write JSONL as we go and skip keys already done.
 - **Token-bucket limiter.** Respects RPM/TPM, plus exponential backoff with jitter on 429 and 5xx errors.
-- Target: about **15–25k raw pairs, then about 8–12k verified pairs** after roughly one week of
-  daily runs. Published distillation work shows that a few thousand clean pairs already move a 1.5B model.
+- Target: about **15–25k raw pairs, then about 8–12k verified pairs**. Published distillation
+  work shows that a few thousand clean pairs already move a 1.5B model.
+- **Measured budget** (`make generate-dry`, real prompts are about 2,070 tokens per call with 8 pairs):
+  a full pass is 828 calls per teacher. That takes about **9.5 days on each Groq model** (about
+  86 calls/day under 200K TPD) and **about 4 days on Gemini Flash** (about 225 calls/day). The teachers
+  run in parallel, and tasks go round-robin over databases, so every daily run adds data for every DB.
 
 "Frontier" comparison: for the headline we compare against the **strongest teacher** we can call for
 free. We will not claim a GPT-5-class comparison unless we can actually run it at $0.
@@ -145,19 +149,37 @@ flowchart LR
   N[(Contamination check)] -.guards.-> E
 ```
 
-### Verification rules (Phase 2)
-A generated pair is kept only if all of these hold:
-- It parses with `sqlglot` (SQLite dialect).
-- It executes within a 5 s timeout on a **read-only** connection.
-- The result is non-empty and has fewer than 10k rows (empty results are usually wrong; very large
-  results usually mean a missing JOIN condition).
-- No near-duplicate SQL already exists for that DB. We normalise the SQL with sqlglot, then compare
-  both the SQL and its result hash.
-- Optional self-consistency: when two teachers answer the same question and their results match,
-  we mark the pair `agreement=true`, our highest-quality tier.
+### Generation prompt (Phase 2)
+Each prompt contains:
+- the schema as `CREATE TABLE` statements, with 3 example rows per table;
+- **real values of low-variety text columns** (for example `Faculty.Rank: 'Instructor', 'Professor', ...`).
+  Without these, teachers guess filter values like `'USA'` when the data says `'United States'`. The query
+  then returns nothing and gets rejected, wasting quota;
+- 3 decontaminated Spider-train exemplars for the same DB;
+- one **focus** per call (joins, nesting, set operations, ranking, ...), rotated per DB so the
+  data covers every SQL pattern.
 
-Every rejection is logged with a reason code so the stats report can show "kept 61%; 18% empty;
-9% error; 7% duplicate; …".
+### Verification rules (Phase 2)
+Checks run in a fixed order. The first failure is the pair's single rejection reason, so the
+report adds up to 100%:
+1. Question length between 4 and 60 words.
+2. **Not contaminated**: the same `EvalIndex` as the Phase 1 gate checks each question for exact,
+   13-gram and near-duplicate matches.
+3. Not a copy of a few-shot exemplar.
+4. Parses with `sqlglot` as exactly one read-only statement (SELECT / WITH / set operation).
+5. Executes within 5 s on a **read-only** connection. Slow queries are aborted with SQLite's
+   progress handler.
+6. Result is non-empty, not all NULL, and has at most 10k rows.
+7. First occurrence per DB wins. Duplicates are detected on the normalised question and on the
+   canonical (sqlglot-normalised) SQL.
+
+**Cross-check** (`make crosscheck`): a second teacher writes its own SQL for each kept question,
+and we compare the *results*. If they match, the pair is marked `agreement=true`, our
+highest-quality tier. Disagreements are kept but marked `false`, because we don't know which side
+is wrong; Phase 4 decides whether to filter or down-weight them.
+
+Rejected pairs keep their SQL and reason in `data/processed/rejected/`. Pairs that ran but were
+wrong are candidates for DPO "rejected" answers in Phase 5.
 
 ---
 
@@ -245,3 +267,8 @@ calculated from paid list prices. We never actually pay it.
 - 2026-10-27 — Exclude empty train DBs automatically (they can't execution-verify SQL).
 - 2026-10-27 — BIRD Mini-Dev comes from the Google Drive copy (`minidev_0703.zip`, sha256 pinned). The OSS mirror stalls outside China.
 - 2026-10-27 — Near-duplicate threshold 0.8, calibrated on Spider train vs eval questions.
+- 2026-10-27 — One OpenAI-compatible HTTP client for Groq and Gemini (no vendor SDKs). The disk
+  cache is keyed by the full request, and daily usage is saved to disk so limits survive restarts.
+- 2026-10-27 — Prompts include real values of low-variety columns, to cut empty-result rejections.
+- 2026-10-27 — Spider exemplars have known label noise (e.g. a self-join `T2.actid = T2.actid`).
+  They are only style hints in prompts; labels always come from verified teacher output.

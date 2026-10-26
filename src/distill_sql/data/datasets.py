@@ -15,7 +15,7 @@ from typing import Any, Literal
 
 from pydantic import BaseModel
 
-from distill_sql.utils.io import read_json
+from distill_sql.utils.io import iter_jsonl, read_json
 
 Role = Literal["train", "eval", "excluded"]
 ROLES: tuple[Role, ...] = ("train", "eval", "excluded")
@@ -109,6 +109,21 @@ def layout(dataset: str, split: str) -> SplitLayout:
 
 def db_path(extract_dir: Path, dataset: str, split: str, db_id: str) -> Path:
     return extract_dir / layout(dataset, split).db_dir / db_id / f"{db_id}.sqlite"
+
+
+def load_registry(processed_dir: Path) -> Registry:
+    path = processed_dir / "registry.json"
+    if not path.exists():
+        raise FileNotFoundError(f"{path} not found. Run `make data` first.")
+    return Registry.model_validate(read_json(path))
+
+
+def load_processed_examples(processed_dir: Path, dataset: str, splits: list[str]) -> list[Example]:
+    return [
+        Example.model_validate(row)
+        for split in splits
+        for row in iter_jsonl(processed_dir / "examples" / dataset / f"{split}.jsonl")
+    ]
 
 
 def load_examples(extract_dir: Path, dataset: str, split: str) -> list[Example]:

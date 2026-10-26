@@ -81,11 +81,21 @@ make test
 # 4. data (Phase 1): downloads ~1 GB, builds data/processed/ in about 5 s after download
 make data
 make check-contamination
+
+# 5. synthetic data (Phase 2): resumable, re-run once a day until enough data
+make generate-dry                 # example prompt + rate-limit budget, no API calls
+make generate MAX_CALLS=5         # small pilot
+make generate                     # all teachers in parallel, stops cleanly at daily limits
+make verify                       # execute + filter + dedupe -> data/processed/train/sft.jsonl
+make crosscheck CHECKER=gemini-flash   # optional: second teacher re-answers kept questions
+make verify && make check-contamination
 ```
 
 Outputs: `data/processed/registry.json` (every DB with its train/eval/excluded role),
 `examples/` (all questions in one format), `schemas/` (per-DB schema + sample rows) and
-`reports/data_report.md`. Later pipeline commands are added phase by phase; run `make help`.
+`reports/data_report.md`. Phase 2 adds `train/sft.jsonl`, `rejected/rejected.jsonl` and
+`reports/generation_report.md` (keep rates, rejection reasons, SQL complexity, cost at list price).
+Run `make help` for every command.
 
 ## Data and licences
 

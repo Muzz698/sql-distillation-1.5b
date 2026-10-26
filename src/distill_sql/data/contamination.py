@@ -143,46 +143,53 @@ def check(
             report.add(Finding("unknown_db_in_train", f"{row.source}: db_id={row.db_id}"))
 
     # ---- row level: questions ---------------------------------------------
-    eval_norm: dict[str, Example] = {}
-    eval_ngrams: dict[tuple[str, ...], Example] = {}
-    shingle_index: dict[tuple[str, ...], list[int]] = defaultdict(list)
-    eval_shingle_sizes: list[int] = []
-    for idx, ex in enumerate(eval_examples):
-        norm = normalize(ex.question)
-        tokens = norm.split()
-        eval_norm.setdefault(norm, ex)
-        for g in ngrams(tokens, cfg.ngram_n):
-            eval_ngrams.setdefault(g, ex)
-        sh = shingles(tokens, cfg.near_dup_shingle_n)
-        eval_shingle_sizes.append(len(sh))
-        for s in sh:
-            shingle_index[s].append(idx)
-
+    index = EvalIndex(eval_examples, cfg)
     for row in train_rows:
-        norm = normalize(row.question)
-        tokens = norm.split()
-        if norm in eval_norm:
-            ex = eval_norm[norm]
-            report.add(Finding("exact_question", f"{row.source} == {ex.uid}: {row.question!r}"))
-            continue  # exact match implies the weaker rules; report once
-        hit = next((eval_ngrams[g] for g in ngrams(tokens, cfg.ngram_n) if g in eval_ngrams), None)
-        if hit is not None:
-            report.add(Finding("ngram_overlap", f"{row.source} ~ {hit.uid}: {row.question!r}"))
-            continue
-        sh = shingles(tokens, cfg.near_dup_shingle_n)
+        match = index.match(row.question)
+        if match is not None:
+            rule, ex, detail = match
+            report.add(Finding(rule, f"{row.source} ~ {ex.uid}{detail}: {row.question!r}"))
+    return report
+
+
+class EvalIndex:
+    """Fast lookup of "does this question leak an eval question?".
+
+    Used by :func:`check` and by the generation pipeline, which drops leaking questions
+    before they are ever written to training data.
+    """
+
+    def __init__(self, eval_examples: list[Example], cfg: ContaminationConfig) -> None:
+        self.cfg = cfg
+        self.examples = eval_examples
+        self._norm: dict[str, Example] = {}
+        self._ngrams: dict[tuple[str, ...], Example] = {}
+        self._shingles: dict[tuple[str, ...], list[int]] = defaultdict(list)
+        self._sizes: list[int] = []
+        for idx, ex in enumerate(eval_examples):
+            tokens = normalize(ex.question).split()
+            self._norm.setdefault(" ".join(tokens), ex)
+            for g in ngrams(tokens, cfg.ngram_n):
+                self._ngrams.setdefault(g, ex)
+            sh = shingles(tokens, cfg.near_dup_shingle_n)
+            self._sizes.append(len(sh))
+            for s in sh:
+                self._shingles[s].append(idx)
+
+    def match(self, question: str) -> tuple[str, Example, str] | None:
+        """Return ``(rule, eval_example, detail)`` for the strongest match, or ``None``."""
+        tokens = normalize(question).split()
+        if (ex := self._norm.get(" ".join(tokens))) is not None:
+            return "exact_question", ex, ""
+        for g in ngrams(tokens, self.cfg.ngram_n):
+            if (ex := self._ngrams.get(g)) is not None:
+                return "ngram_overlap", ex, ""
+        sh = shingles(tokens, self.cfg.near_dup_shingle_n)
         shared: Counter[int] = Counter()
         for s in sh:
-            shared.update(shingle_index.get(s, ()))
-        for idx, inter in shared.items():
-            jaccard = inter / (len(sh) + eval_shingle_sizes[idx] - inter)
-            if jaccard >= cfg.near_dup_jaccard:
-                ex = eval_examples[idx]
-                report.add(
-                    Finding(
-                        "near_duplicate",
-                        f"{row.source} ~ {ex.uid} (J={jaccard:.2f}): "
-                        f"{row.question!r} vs {ex.question!r}",
-                    )
-                )
-                break
-    return report
+            shared.update(self._shingles.get(s, ()))
+        for idx, inter in shared.most_common():
+            jaccard = inter / (len(sh) + self._sizes[idx] - inter)
+            if jaccard >= self.cfg.near_dup_jaccard:
+                return "near_duplicate", self.examples[idx], f" (J={jaccard:.2f})"
+        return None
