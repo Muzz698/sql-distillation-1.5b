@@ -39,7 +39,7 @@ check-contamination: ## Fail if any eval DB/schema/question leaks into training 
 
 TEACHER ?=
 MAX_CALLS ?=
-CHECKER ?= gemini-flash
+CHECKER ?= gemini-flash-lite
 GEN_ARGS = $(if $(TEACHER),--teacher $(TEACHER)) $(if $(MAX_CALLS),--max-calls $(MAX_CALLS))
 
 generate-dry: ## Show an example teacher prompt and the rate-limit budget (no API calls)

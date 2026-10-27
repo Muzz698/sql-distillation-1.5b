@@ -32,7 +32,7 @@ from distill_sql.generation.generate import (
     plan_tasks,
     run_teacher,
 )
-from distill_sql.generation.ratelimit import RateLimiter
+from distill_sql.generation.ratelimit import RateLimiter, day_in
 from distill_sql.utils.io import atomic_write_text, iter_jsonl, write_json, write_jsonl
 from distill_sql.verification.crosscheck import CrosscheckSummary, load_agreement, run_crosscheck
 from distill_sql.verification.report import build_stats, render_markdown
@@ -99,6 +99,7 @@ def make_client(
         teacher.rpd,
         teacher.tpd,
         state_file=cache_dir / "usage" / f"{teacher.name}.json",
+        today=day_in(teacher.quota_timezone),
     )
     return TeacherClient(
         teacher,

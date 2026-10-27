@@ -134,7 +134,7 @@ MaxCallsOpt = Annotated[
 
 
 def _teachers(cfg: AppConfig, names: list[str] | None) -> list[TeacherConfig]:
-    return [cfg.teacher(n) for n in names] if names else list(cfg.teachers)
+    return [cfg.teacher(n) for n in names] if names else cfg.active_teachers
 
 
 @gen_app.command("models")

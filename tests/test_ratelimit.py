@@ -99,3 +99,14 @@ def test_unserved_requests_do_not_use_the_daily_budget(tmp_path: Path) -> None:
         lim.record(0, count_request=False)
     assert lim.requests_today == 0
     lim.acquire(10)  # the daily budget is untouched
+
+
+def test_quota_day_follows_the_provider_timezone() -> None:
+    from datetime import UTC, datetime
+    from zoneinfo import ZoneInfo
+
+    from distill_sql.generation.ratelimit import day_in
+
+    assert day_in("UTC")() == datetime.now(UTC).date().isoformat()
+    pacific = datetime.now(ZoneInfo("America/Los_Angeles")).date().isoformat()
+    assert day_in("America/Los_Angeles")() == pacific

@@ -15,6 +15,7 @@ from collections import deque
 from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from distill_sql.utils.io import read_json, write_json
 
@@ -25,6 +26,12 @@ class DailyLimitReached(RuntimeError):  # noqa: N818 - a normal stop signal, not
 
 def _utc_day() -> str:
     return datetime.now(UTC).date().isoformat()
+
+
+def day_in(timezone: str) -> Callable[[], str]:
+    """Today's date where the provider resets its daily quota."""
+    tz = ZoneInfo(timezone)
+    return lambda: datetime.now(tz).date().isoformat()
 
 
 class RateLimiter:

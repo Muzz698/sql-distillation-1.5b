@@ -82,7 +82,9 @@ class ParseError(ValueError):
     pass
 
 
-_THINK = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
+# Visible reasoning blocks: Qwen-style <think>, Gemma-style <thought>. An unclosed block
+# (output cut off mid-thought) is dropped to the end.
+_THINK = re.compile(r"<(think|thought)>.*?(</\1>|$)", re.DOTALL | re.IGNORECASE)
 _FENCE = re.compile(r"```(?:json)?\s*(.*?)```", re.DOTALL)
 
 

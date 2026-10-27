@@ -290,6 +290,13 @@ calculated from paid list prices. We never actually pay it.
 - 2026-10-27 — Gemini teacher is `gemini-3.6-flash` with `reasoning_effort: low`. `gemini-2.5-flash`
   returns 404 for new keys, and 3.7/3.8-flash were overloaded (503). Default thinking used ~20x the
   visible output tokens.
+- 2026-10-27 — Gemini teacher replaced by `gemini-3.1-flash-lite` (no `reasoning_effort`).
+  `gemini-3.6-flash` allows only 20 free requests/day. In a 3-call trial with real prompts:
+  `gemma-4-31b-it` thought for 166 s and returned nothing (thinking can't be disabled);
+  `gemini-3.5-flash-lite` kept 24/24 but wrote mostly easy SQL (15 easy, 0 hard);
+  `gemini-3.1-flash-lite` kept 22/24 with 15 medium and 7 hard. The old teacher stays in the config,
+  disabled, so its 176 pairs remain attributed.
+- 2026-10-27 — Daily quotas reset in the provider's timezone (`quota_timezone`; Gemini = Pacific).
 - 2026-10-27 — Hidden reasoning tokens (in `total_tokens` but not `completion_tokens`) now count
   toward rate limits and list-price cost.
 - 2026-10-27 — `max_tokens` lowered from 4096 to 2048: Groq appears to reserve `max_tokens` against

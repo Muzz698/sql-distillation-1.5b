@@ -40,3 +40,10 @@ def test_no_secrets_in_yaml() -> None:
     for path in CONFIGS.glob("*.yaml"):
         text = path.read_text().lower()
         assert "api_key" not in text, f"{path.name} looks like it contains a secret"
+
+
+def test_disabled_teachers_are_not_active_but_still_configured() -> None:
+    cfg = load_config(CONFIGS / "base.yaml")
+    active = {t.name for t in cfg.active_teachers}
+    assert "gemini-flash" not in active and "gemini-flash-lite" in active
+    assert cfg.teacher("gemini-flash").enabled is False  # still reportable

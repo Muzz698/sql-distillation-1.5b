@@ -82,6 +82,11 @@ class TeacherConfig(_Strict):
     tpm: int = Field(gt=0)
     rpd: int = Field(gt=0)
     tpd: int | None = Field(default=None, gt=0)
+    # When the provider's daily quota resets (Gemini: midnight Pacific).
+    quota_timezone: str = "UTC"
+    # Disabled teachers are skipped by `gen run` but still listed in reports, so the data
+    # they already produced stays attributed to them.
+    enabled: bool = True
     # Provider-specific request fields, e.g. {"reasoning_effort": "low"} to save tokens.
     extra_body: dict[str, Any] = Field(default_factory=dict)
     # Paid list prices (USD per 1M tokens). Used only to report "what this would cost".
@@ -133,6 +138,10 @@ class AppConfig(_Strict):
     generation: GenerationConfig | None = None
     verification: VerificationConfig = VerificationConfig()
     tracking: TrackingConfig = TrackingConfig()
+
+    @property
+    def active_teachers(self) -> list[TeacherConfig]:
+        return [t for t in self.teachers if t.enabled]
 
     def teacher(self, name: str) -> TeacherConfig:
         for t in self.teachers:

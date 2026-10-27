@@ -119,3 +119,11 @@ def test_results_match() -> None:
     assert results_match([(3,)], [(3.0,)])
     assert results_match([(0.1 + 0.2,)], [(0.3,)])
     assert not results_match([(1,), (1,)], [(1,)])  # multiset, not set
+
+
+def test_parse_pairs_strips_gemma_thought_blocks() -> None:
+    text = (
+        '<thought>Plan: [{"question": "draft", "sql": "x"}]</thought>\n'
+        '[{"question": "How many pets are there?", "sql": "SELECT count(*) FROM pets"}]'
+    )
+    assert [p.question for p in parse_pairs(text)] == ["How many pets are there?"]
