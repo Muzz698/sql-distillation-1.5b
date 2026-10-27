@@ -4,7 +4,7 @@ CONFIG ?= configs/base.yaml
 UV := uv run
 
 .PHONY: help install lint format typecheck test check ci-eval \
-        data check-contamination generate-dry generate verify crosscheck train-notebook eval serve demo clean
+        data check-contamination generate-dry generate verify crosscheck models eval eval-report train-notebook serve demo clean
 
 help: ## Show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -57,11 +57,21 @@ crosscheck: ## Second teacher re-answers kept questions (CHECKER=, MAX_CALLS=)
 train-notebook: ## [Phase 4] Print instructions for the Kaggle training notebook
 	@echo "Not implemented yet (Phase 4)"; exit 1
 
-eval: ## [Phase 3] Run the evaluation harness
-	@echo "Not implemented yet (Phase 3)"; exit 1
+MODEL ?= base-q8
+SET ?= spider_dev_200
+LIMIT ?=
 
-ci-eval: ## [Phase 3] Re-score saved predictions on the fixed CI subset
-	@echo "Not implemented yet (Phase 3)"; exit 1
+models: ## Download local model GGUFs (needs `brew install llama.cpp` to serve them)
+	$(UV) distill-sql eval models --config $(CONFIG)
+
+eval: ## Evaluate MODEL= on SET= (resumable; LIMIT=N for a quick check)
+	$(UV) distill-sql eval run --model $(MODEL) --set $(SET) --config $(CONFIG) $(if $(LIMIT),--limit $(LIMIT))
+
+eval-report: ## Rebuild results/README.md (all models, all sets)
+	$(UV) distill-sql eval report --config $(CONFIG)
+
+ci-eval: ## Re-score the committed CI fixture; fail if accuracy drops (no model needed)
+	$(UV) distill-sql eval ci
 
 serve: ## [Phase 7] Start the FastAPI service
 	@echo "Not implemented yet (Phase 7)"; exit 1

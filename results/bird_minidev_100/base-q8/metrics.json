@@ -1,0 +1,36 @@
+{
+  "set": "bird_minidev_100",
+  "kind": "local",
+  "n": 100,
+  "n_total": 100,
+  "complete": true,
+  "ex": 0.2,
+  "ex_ci95": [
+    0.13,
+    0.28
+  ],
+  "em": null,
+  "valid_rate": 0.45,
+  "by_difficulty": {
+    "simple": {
+      "n": 30,
+      "ex": 0.3
+    },
+    "moderate": {
+      "n": 50,
+      "ex": 0.2
+    },
+    "challenging": {
+      "n": 20,
+      "ex": 0.05
+    }
+  },
+  "latency_p50_s": 0.798,
+  "latency_p95_s": 2.312,
+  "tokens_per_s": 55.546,
+  "mean_prompt_tokens": 2293.64,
+  "mean_output_tokens": 46.2,
+  "cost_per_1k_usd": 0.0,
+  "peak_memory_mb": 3050,
+  "gold_failures": 0
+}

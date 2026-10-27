@@ -32,6 +32,7 @@ PROVIDERS: dict[str, tuple[str, str]] = {
     # provider -> (OpenAI-compatible base URL, Secrets field holding the key)
     "groq": ("https://api.groq.com/openai/v1", "groq_api_key"),
     "gemini": ("https://generativelanguage.googleapis.com/v1beta/openai", "gemini_api_key"),
+    "local": ("http://127.0.0.1:8080/v1", ""),  # llama-server; no key needed
 }
 _DAILY_HINTS = re.compile(r"per day|\bRPD\b|\bTPD\b|daily", re.IGNORECASE)
 
@@ -75,6 +76,8 @@ def estimate_tokens(messages: list[Message]) -> int:
 
 def api_key_for(provider: str, secrets: Secrets) -> str:
     field = PROVIDERS[provider][1]
+    if not field:
+        return "none"
     value = getattr(secrets, field)
     key = value.get_secret_value().strip() if value is not None else ""
     if not key:  # `KEY=` in .env loads as an empty string, not None
@@ -97,7 +100,7 @@ class TeacherClient:
         self.teacher = teacher
         self.cache = cache
         self.limiter = limiter
-        self.base_url = PROVIDERS[teacher.provider][0]
+        self.base_url = teacher.base_url or PROVIDERS[teacher.provider][0]
         self.http = http or httpx.Client(timeout=httpx.Timeout(30.0, read=180.0))
         self.headers = {"Authorization": f"Bearer {api_key}"}
         self.max_retries = max_retries

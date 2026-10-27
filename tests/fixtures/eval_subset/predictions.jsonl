@@ -1,0 +1,50 @@
+{"uid": "spider/dev/1", "raw": "SELECT count(*) FROM singer"}
+{"uid": "spider/dev/2", "raw": "SELECT name ,  country ,  age FROM singer ORDER BY age DESC"}
+{"uid": "spider/dev/7", "raw": "SELECT T2.Name, T2.Song_release_year FROM singer AS T1 INNER JOIN singer_in_concert AS T2 ON T1.Singer_ID = T2.Singer_ID ORDER BY T1.Age ASC LIMIT 1"}
+{"uid": "spider/dev/52", "raw": "SELECT COUNT(PetID) FROM Has_Pet WHERE StuID IN (SELECT StuID FROM Student WHERE Age > 20)"}
+{"uid": "spider/dev/55", "raw": "SELECT count(DISTINCT pettype) FROM pets"}
+{"uid": "spider/dev/66", "raw": "SELECT T1.fname FROM Student AS T1 JOIN Has_Pet AS T2 ON T1.StuID = T2.StuID JOIN Pets AS T3 ON T2.PetID = T3.PetID WHERE T3.PetType = 'dog' AND T3.PetType != 'cat'"}
+{"uid": "spider/dev/69", "raw": "SELECT petid ,  weight FROM pets WHERE pet_age  >  1"}
+{"uid": "spider/dev/107", "raw": "SELECT T2.CountryName FROM car_makers AS T1 JOIN countries AS T2 ON T1.Country = T2.CountryId GROUP BY T2.CountryName ORDER BY COUNT(*) DESC LIMIT 1"}
+{"uid": "spider/dev/120", "raw": "SELECT MIN(Weight) FROM cars_data WHERE Cylinders = 8 AND Year = 1974"}
+{"uid": "spider/dev/150", "raw": "SELECT FullName, Id FROM car_makers WHERE Id IN (SELECT Maker FROM model_list GROUP BY Maker HAVING COUNT(*) > 3)"}
+{"uid": "spider/dev/151", "raw": "SELECT DISTINCT T1.Model FROM car_names AS T1 INNER JOIN car_makers AS T2 ON T1.Make = T2.Id WHERE T2.FullName = 'General Motors' OR T1.Weight > 3500"}
+{"uid": "spider/dev/154", "raw": "SELECT DISTINCT YEAR FROM cars_data WHERE Weight < 4000 INTERSECT SELECT DISTINCT YEAR FROM cars_data WHERE Weight > 3000"}
+{"uid": "spider/dev/166", "raw": "SELECT T2.Model FROM cars_data AS T1 INNER JOIN model_list AS T2 ON T1.Model = T2.Model WHERE T1.Cylinders = 4 ORDER BY T1.Horsepower DESC LIMIT 1"}
+{"uid": "spider/dev/179", "raw": "SELECT Country FROM airlines WHERE Airline = 'JetBlue Airways'"}
+{"uid": "spider/dev/181", "raw": "SELECT Abbreviation FROM airlines WHERE Airline = 'JetBlue Airways'"}
+{"uid": "spider/dev/186", "raw": "SELECT AirportCode ,  AirportName FROM airports WHERE City  =  \"Anthony\""}
+{"uid": "spider/dev/192", "raw": "SELECT count(*) FROM flights"}
+{"uid": "spider/dev/197", "raw": "SELECT T1.City ,  T1.Country FROM airports AS T1 JOIN flights AS T2 ON T1.AirportCode  =  T2.SourceAirport WHERE T2.AirportCode  =  'ALT'"}
+{"uid": "spider/dev/244", "raw": "SELECT Airline FROM flights GROUP BY Airline HAVING count(*) < 200"}
+{"uid": "spider/dev/290", "raw": "SELECT SUM(Bonus) FROM evaluation"}
+{"uid": "spider/dev/292", "raw": "SELECT * FROM hiring"}
+{"uid": "spider/dev/299", "raw": "SELECT Document_ID ,  Document_Name ,  Document_Description FROM Documents"}
+{"uid": "spider/dev/307", "raw": "SELECT COUNT(*) FROM Documents WHERE Template_ID IN (SELECT Template_ID FROM Templates WHERE Template_Type_Code = 'PPT')"}
+{"uid": "spider/dev/315", "raw": "SELECT Template_ID FROM Templates WHERE Template_ID NOT IN (SELECT Template_ID FROM Documents)"}
+{"uid": "spider/dev/316", "raw": "SELECT Template_ID FROM Templates WHERE Template_ID NOT IN (SELECT Template_ID FROM Documents)"}
+{"uid": "spider/dev/321", "raw": "SELECT DISTINCT Template_Type_Code FROM Templates"}
+{"uid": "spider/dev/327", "raw": "SELECT Version_Number ,  Template_Type_Code FROM Templates WHERE Version_Number  >  5"}
+{"uid": "spider/dev/404", "raw": "SELECT T1.Name FROM teacher AS T1 JOIN course_arrange AS T2 ON T1.Teacher_ID = T2.Teacher_ID JOIN course AS T3 ON T2.Course_ID = T3.Course_ID WHERE T3.Course = 'Math'"}
+{"uid": "spider/dev/409", "raw": "SELECT Name FROM teacher WHERE Teacher_ID NOT IN (SELECT Teacher_ID FROM course_arrange)"}
+{"uid": "spider/dev/424", "raw": "SELECT avg(Num_of_Ticket) ,  max(Num_of_Ticket) FROM visit"}
+{"uid": "spider/dev/525", "raw": "SELECT course_name ,  course_id FROM Courses WHERE course_id IN ( SELECT course_id FROM Sections GROUP BY course_id HAVING count(*) <= 2 )"}
+{"uid": "spider/dev/549", "raw": "SELECT T1.last_name FROM Students AS T1 INNER JOIN Addresses AS T2 ON T1.current_address_id = T2.address_id WHERE T2.state_province_county = 'North Carolina' AND T1.student_id NOT IN (SELECT student_id FROM Student_Enrolment)"}
+{"uid": "spider/dev/562", "raw": "SELECT address_id ,  line_1 ,  line_2 FROM addresses WHERE address_id = ( SELECT current_address_id FROM students GROUP BY current_address_id ORDER BY count(*) DESC LIMIT 1 )"}
+{"uid": "spider/dev/574", "raw": "SELECT T1.transcript_date ,  T1.transcript_id FROM Transcript AS T1 JOIN Transcript_Contents AS T2 ON T1.transcript_id  =  T2.transcript_id GROUP BY T1.transcript_id ORDER BY count(*) ASC LIMIT 1"}
+{"uid": "spider/dev/595", "raw": "SELECT Country ,  count(*) FROM TV_Channel GROUP BY Country ORDER BY count(*) DESC LIMIT 1"}
+{"uid": "spider/dev/607", "raw": "SELECT Language ,  count(*) FROM TV_Channel GROUP BY Language"}
+{"uid": "spider/dev/627", "raw": "SELECT COUNT(*) ,  Directed_by FROM Cartoon GROUP BY Directed_by"}
+{"uid": "spider/dev/635", "raw": "SELECT T1.Country FROM TV_Channel AS T1 JOIN Cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Written_by != 'Todd Casey'"}
+{"uid": "spider/dev/648", "raw": "SELECT count(*) FROM poker_player"}
+{"uid": "spider/dev/656", "raw": "SELECT Money_Rank FROM poker_player ORDER BY Earnings DESC LIMIT 1"}
+{"uid": "spider/dev/690", "raw": "SELECT max(area_code) ,  min(area_code) FROM AREA_CODE_STATE"}
+{"uid": "spider/dev/853", "raw": "SELECT Record_Company FROM orchestra GROUP BY Record_Company ORDER BY COUNT(*) DESC LIMIT 1"}
+{"uid": "spider/dev/894", "raw": "SELECT id FROM Highschooler WHERE id NOT IN (SELECT friend_id FROM Friend)"}
+{"uid": "spider/dev/902", "raw": "SELECT student_id, COUNT(*) FROM Likes GROUP BY student_id"}
+{"uid": "spider/dev/954", "raw": "SELECT T1.name, T2.date_of_treatment FROM Dogs AS T1 INNER JOIN Treatments AS T2 ON T1.dog_id = T2.dog_id ORDER BY T1.breed_code ASC LIMIT 1"}
+{"uid": "spider/dev/969", "raw": "SELECT count(*) FROM professionals"}
+{"uid": "spider/dev/995", "raw": "SELECT email_address ,  cell_number ,  home_phone FROM Professionals"}
+{"uid": "spider/dev/999", "raw": "SELECT T1.first_name ,  T2.treatment_type_description FROM Professionals AS T1 JOIN Treatments AS T2 ON T1.professional_id  =  T2.professional_id"}
+{"uid": "spider/dev/1006", "raw": "SELECT Name FROM singer WHERE Citizenship != \"France\""}
+{"uid": "spider/dev/1027", "raw": "SELECT name FROM singer WHERE singer_id NOT IN (SELECT singer_id FROM song)"}

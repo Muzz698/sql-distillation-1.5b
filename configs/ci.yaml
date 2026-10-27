@@ -1,9 +1,12 @@
 extends: base.yaml
 
-# CI eval regression gate: re-scores saved predictions on a fixed Spider-dev subset.
-# Fixture files are created in Phase 3; until then the CI step is skipped.
+# CI eval regression gate: re-scores frozen predictions on a small Spider-dev slice
+# (`make ci-eval`). Built with `distill-sql eval make-ci-fixture`; thresholds are the values
+# recorded in tests/fixtures/eval_subset/expected.json when the fixture was made.
 eval_regression:
   predictions_file: tests/fixtures/eval_subset/predictions.jsonl
   gold_file: tests/fixtures/eval_subset/gold.jsonl
   db_dir: tests/fixtures/eval_subset/databases
-  min_execution_accuracy: 0.0   # raised to the real baseline in Phase 3
+  tables_file: tests/fixtures/eval_subset/tables.json
+  min_execution_accuracy: 0.74  # = expected.json (base-q8, 50 Spider-dev questions)
+  min_exact_match: 0.56

@@ -66,6 +66,8 @@ teachers:
     rpd: 1000
     tpd: 200000
     extra_body: {reasoning_effort: low}   # reasoning tokens count against TPD
+    price_input_per_m: 0.15      # USD, paid list price checked 2026-10-27
+    price_output_per_m: 0.6
   - name: groq-qwen3.8-27b
     provider: groq
     model: qwen/qwen3.8-27b
@@ -73,6 +75,8 @@ teachers:
     tpm: 8000
     rpd: 1000
     tpd: 200000
+    price_input_per_m: 0.8      # USD, paid list price checked 2026-10-27
+    price_output_per_m: 4.0
   - name: gemini-flash
     provider: gemini
     # Retired 2026-10-27: the free tier allows only 20 requests/day for this model. Kept (disabled)
@@ -84,6 +88,8 @@ teachers:
     tpm: 250000
     rpd: 20
     quota_timezone: America/Los_Angeles
+    price_input_per_m: 0.75      # USD, paid list price checked 2026-10-27
+    price_output_per_m: 3.75
   - name: gemini-flash-lite
     provider: gemini
     # Chosen 2026-10-27 after a 3-call trial with real prompts (see docs/PLAN.md):
@@ -97,6 +103,8 @@ teachers:
     tpm: 250000
     rpd: 1000
     quota_timezone: America/Los_Angeles   # Gemini quotas reset at midnight Pacific
+    price_input_per_m: 0.25      # USD, paid list price checked 2026-10-27
+    price_output_per_m: 1.5
 
 generation:
   output_dir: data/interim/generated   # raw teacher output, append-only, one file per teacher
@@ -121,6 +129,34 @@ verification:
   min_question_words: 4
   max_question_words: 60
   crosscheck_batch_size: 10
+
+evaluation:
+  results_dir: results          # committed: predictions + metrics for every model and set
+  models_dir: data/models       # GGUF files (git-ignored)
+  timeout_s: 30                 # per query; BIRD gold queries can be slow
+  max_new_tokens: 512
+  bootstrap_samples: 1000
+  local_server: {binary: llama-server, ctx_size: 16384, gpu_layers: 99}
+  sets:
+    spider_dev: {dataset: spider, split: dev}                          # 1,034 q, full
+    bird_minidev: {dataset: bird_minidev, split: minidev_sqlite}       # 500 q, full
+    # Fixed, stratified subsets: every model, including rate-limited teachers, is scored on
+    # exactly the same questions, so the comparison table is apples to apples.
+    spider_dev_200: {dataset: spider, split: dev, n: 200}
+    bird_minidev_100: {dataset: bird_minidev, split: minidev_sqlite, n: 100}
+    spider_test: {dataset: spider, split: test, final: true}           # run once, at the end
+  models:
+    base-q8:
+      kind: local
+      description: Qwen2.5-Coder-1.5B-Instruct, official Q8_0 GGUF (no fine-tuning)
+      gguf:
+        filename: qwen2.5-coder-1.5b-instruct-q8_0.gguf
+        urls:   # pinned to a Hub revision so the baseline never silently changes
+          - https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/f86cb2c1fa58255f8052cc32aeede1b7482d4361/qwen2.5-coder-1.5b-instruct-q8_0.gguf
+        sha256: 507de59046601282ba768a9789900e6ccf60ed93ddf346730b7c68eb0715bc47
+    gpt-oss-120b: {kind: teacher, teacher: groq-gpt-oss-120b, description: "Teacher (Groq)"}
+    qwen3.8-27b: {kind: teacher, teacher: groq-qwen3.8-27b, description: "Teacher (Groq)"}
+    gemini-3.1-flash-lite: {kind: teacher, teacher: gemini-flash-lite, description: "Teacher (Google)"}
 
 tracking:
   backend: mlflow

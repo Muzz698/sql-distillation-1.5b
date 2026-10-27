@@ -15,17 +15,29 @@ Distill-SQL fine-tunes **Qwen2.5-Coder-1.5B-Instruct** on SQL that larger teache
 and that we **checked by running it against real databases**. Then it measures how much of the teacher's
 accuracy survives, and what that costs.
 
-## Results (placeholder)
+## Results (baselines so far)
 
-| Model | Spider dev EX | BIRD Mini-Dev EX | Latency p50 | Cost / 1k queries | Runs on laptop |
-|---|---|---|---|---|---|
-| Qwen2.5-Coder-1.5B (base) | – | – | – | ~$0 | ✅ |
-| + SFT (ours) | – | – | – | ~$0 | ✅ |
-| + SFT + DPO (ours) | – | – | – | ~$0 | ✅ |
-| + SFT + DPO, GGUF Q4_K_M (ours) | – | – | – | ~$0 | ✅ |
-| Teacher (gpt-oss-120b) | – | – | – | $– | ❌ |
+All models get the same zero-shot prompt (schema as `CREATE TABLE` + 3 sample rows, then the
+question). Teachers are scored on fixed, stratified subsets (200 Spider-dev / 100 BIRD questions)
+because free tiers can't afford the full sets. Full tables with confidence intervals,
+significance tests and per-difficulty results: [results/README.md](results/README.md).
 
-EX = execution accuracy (the predicted SQL returns the same result as the gold SQL).
+| Model | Spider dev EX (subset 200) | BIRD Mini-Dev EX (subset 100) | p50 latency | Peak memory | Cost / 1k queries* |
+|---|---:|---:|---:|---:|---:|
+| Qwen2.5-Coder-1.5B base, Q8 GGUF (local, M1 Pro) | 62.5% | 20.0% | 0.36 s | 2.8 GB | $0 |
+| + SFT (ours) | Phase 4 | | | | $0 |
+| + SFT + DPO (ours) | Phase 5 | | | | $0 |
+| + SFT + DPO, 4-bit GGUF (ours) | Phase 6 | | | | $0 |
+| Teacher: `gemini-3.1-flash-lite` | 80.0% | 68.0% | 2.1 s | – | $0.25 |
+| Teacher: `gpt-oss-120b` (Groq) | pending | pending | | – | |
+| Teacher: `qwen3.8-27b` (Groq) | pending | pending | | – | |
+
+On the full sets the base model scores **63.4%** on Spider dev (1,034 q, 95% CI 60.5–66.3)
+and **21.4%** on BIRD Mini-Dev (500 q). Its main failure mode is schema linking (columns from
+the wrong table, columns that don't exist) and, on BIRD, MySQL-only functions such as `YEAR()`.
+
+EX = execution accuracy: the predicted SQL returns the same rows as the gold SQL.
+\*Paid list price per 1,000 queries; we pay $0 on free tiers. Local models have no marginal cost.
 
 ## Architecture
 
@@ -89,6 +101,13 @@ make generate                     # all teachers in parallel, stops cleanly at d
 make verify                       # execute + filter + dedupe -> data/processed/train/sft.jsonl
 make crosscheck CHECKER=gemini-flash-lite   # optional: second teacher re-answers kept questions
 make verify && make check-contamination
+
+# 6. evaluation (Phase 3): needs llama.cpp for local models (`brew install llama.cpp`)
+make models                                    # base model GGUF (1.9 GB, sha256-checked)
+make eval MODEL=base-q8 SET=spider_dev         # predict -> execute -> score (resumable)
+make eval MODEL=gpt-oss-120b SET=spider_dev_200
+make eval-report                               # rebuilds results/README.md
+make ci-eval                                   # CI regression check on frozen predictions
 ```
 
 Outputs: `data/processed/registry.json` (every DB with its train/eval/excluded role),

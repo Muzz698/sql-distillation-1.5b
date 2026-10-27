@@ -1,0 +1,1034 @@
+{"uid": "spider/dev/0", "db_id": "concert_singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1", "db_id": "concert_singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/2", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/3", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/4", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/5", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/6", "db_id": "concert_singer", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.song_name", "em": false}
+{"uid": "spider/dev/7", "db_id": "concert_singer", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/8", "db_id": "concert_singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/9", "db_id": "concert_singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/10", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/11", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/12", "db_id": "concert_singer", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.song_name", "em": false}
+{"uid": "spider/dev/13", "db_id": "concert_singer", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.song_name", "em": false}
+{"uid": "spider/dev/14", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/15", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/16", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/17", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/18", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/19", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/20", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/21", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/22", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/23", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/24", "db_id": "concert_singer", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/25", "db_id": "concert_singer", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/26", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/27", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/28", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/29", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/30", "db_id": "concert_singer", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Country", "em": false}
+{"uid": "spider/dev/31", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/32", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/33", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/34", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/35", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/36", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/37", "db_id": "concert_singer", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/38", "db_id": "concert_singer", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/39", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/40", "db_id": "concert_singer", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/41", "db_id": "concert_singer", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/42", "db_id": "concert_singer", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/43", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/44", "db_id": "concert_singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/45", "db_id": "pets_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/46", "db_id": "pets_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/47", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/48", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/49", "db_id": "pets_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: pet_type", "em": false}
+{"uid": "spider/dev/50", "db_id": "pets_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: pet_type", "em": false}
+{"uid": "spider/dev/51", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/52", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/53", "db_id": "pets_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "ambiguous column name: PetID", "em": false}
+{"uid": "spider/dev/54", "db_id": "pets_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/55", "db_id": "pets_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/56", "db_id": "pets_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/57", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/58", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/59", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/60", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/61", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/62", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/63", "db_id": "pets_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: PetType", "em": false}
+{"uid": "spider/dev/64", "db_id": "pets_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/65", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/66", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/67", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/68", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/69", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/70", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/71", "db_id": "pets_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Age", "em": false}
+{"uid": "spider/dev/72", "db_id": "pets_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Age", "em": false}
+{"uid": "spider/dev/73", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/74", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/75", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/76", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/77", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/78", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/79", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/80", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/81", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/82", "db_id": "pets_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/83", "db_id": "pets_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/84", "db_id": "pets_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/85", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/86", "db_id": "pets_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/87", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/88", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/89", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/90", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/91", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/92", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/93", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "ambiguous column name: car_makers.FullName", "em": false}
+{"uid": "spider/dev/94", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/95", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/96", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/97", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Weight", "em": false}
+{"uid": "spider/dev/98", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Weight", "em": false}
+{"uid": "spider/dev/99", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Year", "em": false}
+{"uid": "spider/dev/100", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Year", "em": false}
+{"uid": "spider/dev/101", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Year", "em": false}
+{"uid": "spider/dev/102", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.FullName", "em": false}
+{"uid": "spider/dev/103", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/104", "db_id": "car_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Year", "em": false}
+{"uid": "spider/dev/105", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/106", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/107", "db_id": "car_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/108", "db_id": "car_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/109", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/110", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/111", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Accelerate", "em": false}
+{"uid": "spider/dev/112", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Accelerate", "em": false}
+{"uid": "spider/dev/113", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/114", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/115", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/116", "db_id": "car_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Country", "em": false}
+{"uid": "spider/dev/117", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/118", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/119", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/120", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/121", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/122", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/123", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/124", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.CountryName", "em": false}
+{"uid": "spider/dev/125", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/126", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/127", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/128", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/129", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Country", "em": false}
+{"uid": "spider/dev/130", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.CountryName", "em": false}
+{"uid": "spider/dev/131", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Horsepower", "em": false}
+{"uid": "spider/dev/132", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Horsepower", "em": false}
+{"uid": "spider/dev/133", "db_id": "car_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: MPG", "em": false}
+{"uid": "spider/dev/134", "db_id": "car_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: MPG", "em": false}
+{"uid": "spider/dev/135", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/136", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/137", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/138", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Maker", "em": false}
+{"uid": "spider/dev/139", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/140", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/141", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/142", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/143", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/144", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/145", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/146", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/147", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/148", "db_id": "car_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/149", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/150", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/151", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Weight", "em": false}
+{"uid": "spider/dev/152", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Country", "em": false}
+{"uid": "spider/dev/153", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/154", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/155", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/156", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/157", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/158", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/159", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/160", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/161", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/162", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/163", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/164", "db_id": "car_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/165", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Model", "em": false}
+{"uid": "spider/dev/166", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Model", "em": false}
+{"uid": "spider/dev/167", "db_id": "car_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/168", "db_id": "car_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/169", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/170", "db_id": "car_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/171", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Weight", "em": false}
+{"uid": "spider/dev/172", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Weight", "em": false}
+{"uid": "spider/dev/173", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/174", "db_id": "car_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/175", "db_id": "car_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/176", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Model", "em": false}
+{"uid": "spider/dev/177", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate function COUNT()", "em": false}
+{"uid": "spider/dev/178", "db_id": "car_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: CountryId", "em": false}
+{"uid": "spider/dev/179", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/180", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/181", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/182", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/183", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/184", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/185", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/186", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/187", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/188", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/189", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/190", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/191", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/192", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/193", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/194", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/195", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/196", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/197", "db_id": "flight_2", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.AirportCode", "em": false}
+{"uid": "spider/dev/198", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/199", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/200", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/201", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/202", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/203", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/204", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/205", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/206", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/207", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/208", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/209", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/210", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/211", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/212", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/213", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/214", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/215", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/216", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/217", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/218", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/219", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/220", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/221", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/222", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/223", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/224", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/225", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/226", "db_id": "flight_2", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate: COUNT()", "em": false}
+{"uid": "spider/dev/227", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/228", "db_id": "flight_2", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate: count()", "em": false}
+{"uid": "spider/dev/229", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/230", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/231", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/232", "db_id": "flight_2", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Country", "em": false}
+{"uid": "spider/dev/233", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/234", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/235", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/236", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/237", "db_id": "flight_2", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Airline", "em": false}
+{"uid": "spider/dev/238", "db_id": "flight_2", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Airline", "em": false}
+{"uid": "spider/dev/239", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/240", "db_id": "flight_2", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/241", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/242", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/243", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/244", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/245", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/246", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/247", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/248", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/249", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/250", "db_id": "flight_2", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/251", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/252", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/253", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/254", "db_id": "flight_2", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/255", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/256", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/257", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/258", "db_id": "flight_2", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/259", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/260", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/261", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/262", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/263", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/264", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/265", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/266", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/267", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/268", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/269", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Manager_name", "em": false}
+{"uid": "spider/dev/270", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Manager_name", "em": false}
+{"uid": "spider/dev/271", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/272", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/273", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/274", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/275", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/276", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/277", "db_id": "employee_hire_evaluation", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/278", "db_id": "employee_hire_evaluation", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/279", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/280", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/281", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/282", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/283", "db_id": "employee_hire_evaluation", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/284", "db_id": "employee_hire_evaluation", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/285", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/286", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/287", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/288", "db_id": "employee_hire_evaluation", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/289", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/290", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/291", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/292", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/293", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/294", "db_id": "employee_hire_evaluation", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/295", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/296", "db_id": "employee_hire_evaluation", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/297", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/298", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/299", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/300", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/301", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Document_Name", "em": false}
+{"uid": "spider/dev/302", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/303", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/304", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/305", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/306", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/307", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/308", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/309", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/310", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/311", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/312", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/313", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/314", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/315", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/316", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/317", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/318", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/319", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/320", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/321", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/322", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/323", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/324", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/325", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/326", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/327", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/328", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/329", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/330", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/331", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/332", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/333", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/334", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/335", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/336", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/337", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Template_Type_Code", "em": false}
+{"uid": "spider/dev/338", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Template_Type_Code", "em": false}
+{"uid": "spider/dev/339", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Document_Name", "em": false}
+{"uid": "spider/dev/340", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Document_Name", "em": false}
+{"uid": "spider/dev/341", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Document_ID", "em": false}
+{"uid": "spider/dev/342", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Document_ID", "em": false}
+{"uid": "spider/dev/343", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/344", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/345", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/346", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/347", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/348", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/349", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/350", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Template_Type_Description", "em": false}
+{"uid": "spider/dev/351", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/352", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/353", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Template_Type_Description", "em": false}
+{"uid": "spider/dev/354", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Template_Type_Description", "em": false}
+{"uid": "spider/dev/355", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/356", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Template_Type_Description", "em": false}
+{"uid": "spider/dev/357", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/358", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/359", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/360", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/361", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/362", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/363", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/364", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/365", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/366", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/367", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/368", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/369", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: document_name", "em": false}
+{"uid": "spider/dev/370", "db_id": "cre_Doc_Template_Mgt", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/371", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/372", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/373", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/374", "db_id": "cre_Doc_Template_Mgt", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/375", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Paragraph_ID", "em": false}
+{"uid": "spider/dev/376", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate: count()", "em": false}
+{"uid": "spider/dev/377", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/378", "db_id": "cre_Doc_Template_Mgt", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/379", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/380", "db_id": "cre_Doc_Template_Mgt", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/381", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/382", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/383", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/384", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/385", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/386", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/387", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/388", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/389", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/390", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/391", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/392", "db_id": "course_teach", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Hometown", "em": false}
+{"uid": "spider/dev/393", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/394", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/395", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/396", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/397", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/398", "db_id": "course_teach", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/399", "db_id": "course_teach", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Course", "em": false}
+{"uid": "spider/dev/400", "db_id": "course_teach", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Course", "em": false}
+{"uid": "spider/dev/401", "db_id": "course_teach", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Course", "em": false}
+{"uid": "spider/dev/402", "db_id": "course_teach", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Course", "em": false}
+{"uid": "spider/dev/403", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/404", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/405", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/406", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/407", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/408", "db_id": "course_teach", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/409", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/410", "db_id": "course_teach", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/411", "db_id": "museum_visit", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/412", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/413", "db_id": "museum_visit", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/414", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/415", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/416", "db_id": "museum_visit", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/417", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/418", "db_id": "museum_visit", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/419", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/420", "db_id": "museum_visit", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/421", "db_id": "museum_visit", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: name", "em": false}
+{"uid": "spider/dev/422", "db_id": "museum_visit", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/423", "db_id": "museum_visit", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/424", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/425", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/426", "db_id": "museum_visit", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/427", "db_id": "museum_visit", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/428", "db_id": "museum_visit", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/429", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/430", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/431", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/432", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/433", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/434", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/435", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/436", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/437", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/438", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/439", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/440", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/441", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/442", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/443", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/444", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/445", "db_id": "wta_1", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such table: tournaments", "em": false}
+{"uid": "spider/dev/446", "db_id": "wta_1", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such table: tournaments", "em": false}
+{"uid": "spider/dev/447", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/448", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/449", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/450", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/451", "db_id": "wta_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/452", "db_id": "wta_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/453", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/454", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/455", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/456", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/457", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/458", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/459", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/460", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/461", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/462", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/463", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/464", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/465", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/466", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/467", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/468", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/469", "db_id": "wta_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: ranking", "em": false}
+{"uid": "spider/dev/470", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/471", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/472", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/473", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/474", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/475", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/476", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/477", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/478", "db_id": "wta_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/479", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/480", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/481", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/482", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/483", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/484", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/485", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/486", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/487", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/488", "db_id": "wta_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/489", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/490", "db_id": "wta_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/491", "db_id": "battle_death", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/492", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/493", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/494", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/495", "db_id": "battle_death", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/496", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/497", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/498", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/499", "db_id": "battle_death", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/500", "db_id": "battle_death", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: name", "em": false}
+{"uid": "spider/dev/501", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/502", "db_id": "battle_death", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/503", "db_id": "battle_death", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/504", "db_id": "battle_death", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/505", "db_id": "battle_death", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/506", "db_id": "battle_death", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/507", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/508", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/509", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/510", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/511", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/512", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/513", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/514", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/515", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate: count()", "em": false}
+{"uid": "spider/dev/516", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate: count()", "em": false}
+{"uid": "spider/dev/517", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/518", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/519", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/520", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/521", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/522", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/523", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/524", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/525", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/526", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/527", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/528", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/529", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/530", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.semester_name", "em": false}
+{"uid": "spider/dev/531", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/532", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/533", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/534", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/535", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/536", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/537", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/538", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/539", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/540", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.degree_summary_name", "em": false}
+{"uid": "spider/dev/541", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.first_name", "em": false}
+{"uid": "spider/dev/542", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/543", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/544", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/545", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.course_id", "em": false}
+{"uid": "spider/dev/546", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/547", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.course_id", "em": false}
+{"uid": "spider/dev/548", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.course_id", "em": false}
+{"uid": "spider/dev/549", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/550", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/551", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/552", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such table: Transcript", "em": false}
+{"uid": "spider/dev/553", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/554", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/555", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/556", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/557", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.date_left", "em": false}
+{"uid": "spider/dev/558", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/559", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/560", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/561", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/562", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/563", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/564", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/565", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/566", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/567", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/568", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/569", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/570", "db_id": "student_transcripts_tracking", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/571", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/572", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/573", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/574", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such table: Transcript", "em": false}
+{"uid": "spider/dev/575", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.semester_name", "em": false}
+{"uid": "spider/dev/576", "db_id": "student_transcripts_tracking", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/577", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/578", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/579", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/580", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/581", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/582", "db_id": "student_transcripts_tracking", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/583", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/584", "db_id": "student_transcripts_tracking", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/585", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/586", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/587", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/588", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/589", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/590", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/591", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/592", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/593", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/594", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/595", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/596", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/597", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/598", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "wrong number of arguments to function count()", "em": false}
+{"uid": "spider/dev/599", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/600", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/601", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/602", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/603", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/604", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/605", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/606", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/607", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/608", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/609", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.series_name", "em": false}
+{"uid": "spider/dev/610", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/611", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Title", "em": false}
+{"uid": "spider/dev/612", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Title", "em": false}
+{"uid": "spider/dev/613", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/614", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/615", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/616", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/617", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/618", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/619", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/620", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/621", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/622", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/623", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Channel", "em": false}
+{"uid": "spider/dev/624", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/625", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Episode", "em": false}
+{"uid": "spider/dev/626", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/627", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/628", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/629", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/630", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/631", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/632", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/633", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/634", "db_id": "tvshow", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Country", "em": false}
+{"uid": "spider/dev/635", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/636", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/637", "db_id": "tvshow", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/638", "db_id": "tvshow", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/639", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/640", "db_id": "tvshow", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/641", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/642", "db_id": "tvshow", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/643", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/644", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/645", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/646", "db_id": "tvshow", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/647", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/648", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/649", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/650", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/651", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/652", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/653", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/654", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/655", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/656", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/657", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/658", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/659", "db_id": "poker_player", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/660", "db_id": "poker_player", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/661", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Name", "em": false}
+{"uid": "spider/dev/662", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Name", "em": false}
+{"uid": "spider/dev/663", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/664", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/665", "db_id": "poker_player", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Birth_Date", "em": false}
+{"uid": "spider/dev/666", "db_id": "poker_player", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Birth_Date", "em": false}
+{"uid": "spider/dev/667", "db_id": "poker_player", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Height", "em": false}
+{"uid": "spider/dev/668", "db_id": "poker_player", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Height", "em": false}
+{"uid": "spider/dev/669", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Height", "em": false}
+{"uid": "spider/dev/670", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Height", "em": false}
+{"uid": "spider/dev/671", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/672", "db_id": "poker_player", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Name", "em": false}
+{"uid": "spider/dev/673", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/674", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/675", "db_id": "poker_player", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/676", "db_id": "poker_player", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/677", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/678", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/679", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/680", "db_id": "poker_player", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/681", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/682", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/683", "db_id": "poker_player", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/684", "db_id": "poker_player", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/685", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/686", "db_id": "poker_player", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/687", "db_id": "voter_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/688", "db_id": "voter_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/689", "db_id": "voter_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/690", "db_id": "voter_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/691", "db_id": "voter_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/692", "db_id": "voter_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/693", "db_id": "voter_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/694", "db_id": "voter_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.contestant_name", "em": false}
+{"uid": "spider/dev/695", "db_id": "voter_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: contestant_name", "em": false}
+{"uid": "spider/dev/696", "db_id": "voter_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/697", "db_id": "voter_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/698", "db_id": "voter_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.area_code", "em": false}
+{"uid": "spider/dev/699", "db_id": "voter_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: contestant_name", "em": false}
+{"uid": "spider/dev/700", "db_id": "voter_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.area_code", "em": false}
+{"uid": "spider/dev/701", "db_id": "voter_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.contestant_name", "em": false}
+{"uid": "spider/dev/702", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/703", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/704", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/705", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/706", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/707", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/708", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/709", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/710", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/711", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Region", "em": false}
+{"uid": "spider/dev/712", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/713", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/714", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/715", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/716", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/717", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/718", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/719", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/720", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/721", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/722", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/723", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.GNP", "em": false}
+{"uid": "spider/dev/724", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/725", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/726", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/727", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/728", "db_id": "world_1", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.District", "em": false}
+{"uid": "spider/dev/729", "db_id": "world_1", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.District", "em": false}
+{"uid": "spider/dev/730", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/731", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/732", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/733", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/734", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/735", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/736", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/737", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/738", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/739", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/740", "db_id": "world_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/741", "db_id": "world_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Name", "em": false}
+{"uid": "spider/dev/742", "db_id": "world_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Language", "em": false}
+{"uid": "spider/dev/743", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/744", "db_id": "world_1", "difficulty": "easy", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.CountryCode", "em": false}
+{"uid": "spider/dev/745", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/746", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/747", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/748", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/749", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/750", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/751", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/752", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Region", "em": false}
+{"uid": "spider/dev/753", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Region", "em": false}
+{"uid": "spider/dev/754", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/755", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/756", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/757", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/758", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Language", "em": false}
+{"uid": "spider/dev/759", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Language", "em": false}
+{"uid": "spider/dev/760", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/761", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/762", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/763", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/764", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/765", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/766", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/767", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/768", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/769", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/770", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/771", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/772", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/773", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.CountryCode", "em": false}
+{"uid": "spider/dev/774", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/775", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/776", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/777", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/778", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/779", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/780", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/781", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/782", "db_id": "world_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Language", "em": false}
+{"uid": "spider/dev/783", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/784", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/785", "db_id": "world_1", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Language", "em": false}
+{"uid": "spider/dev/786", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/787", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/788", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/789", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/790", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.HeadOfState", "em": false}
+{"uid": "spider/dev/791", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/792", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/793", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/794", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/795", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/796", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.Population", "em": false}
+{"uid": "spider/dev/797", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/798", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.LifeExpectancy", "em": false}
+{"uid": "spider/dev/799", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/800", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/801", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/802", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/803", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/804", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/805", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/806", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/807", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/808", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/809", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/810", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/811", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/812", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/813", "db_id": "world_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/814", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/815", "db_id": "world_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/816", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.Language", "em": false}
+{"uid": "spider/dev/817", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/818", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/819", "db_id": "world_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/820", "db_id": "world_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/821", "db_id": "world_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: Code", "em": false}
+{"uid": "spider/dev/822", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/823", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/824", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/825", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/826", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/827", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/828", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/829", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/830", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/831", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/832", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/833", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/834", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/835", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/836", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/837", "db_id": "orchestra", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/838", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/839", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/840", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/841", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/842", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/843", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/844", "db_id": "orchestra", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/845", "db_id": "orchestra", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/846", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/847", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/848", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/849", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/850", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/851", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/852", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/853", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/854", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/855", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/856", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/857", "db_id": "orchestra", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/858", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/859", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/860", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/861", "db_id": "orchestra", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/862", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/863", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/864", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/865", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/866", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/867", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/868", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/869", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/870", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/871", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/872", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/873", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/874", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/875", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/876", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/877", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/878", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/879", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/880", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/881", "db_id": "network_1", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/882", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/883", "db_id": "network_1", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "Incorrect number of bindings supplied. The current statement uses 1, and there are 0 supplied.", "em": false}
+{"uid": "spider/dev/884", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/885", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/886", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/887", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/888", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/889", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/890", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/891", "db_id": "network_1", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.name", "em": false}
+{"uid": "spider/dev/892", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/893", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/894", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/895", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/896", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/897", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/898", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/899", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/900", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/901", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/902", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/903", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/904", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/905", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/906", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/907", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/908", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/909", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/910", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/911", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/912", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/913", "db_id": "network_1", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/914", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/915", "db_id": "network_1", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/916", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/917", "db_id": "network_1", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/918", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/919", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/920", "db_id": "dog_kennels", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.age", "em": false}
+{"uid": "spider/dev/921", "db_id": "dog_kennels", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.age", "em": false}
+{"uid": "spider/dev/922", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/923", "db_id": "dog_kennels", "difficulty": "extra", "valid": false, "ex": false, "gold_ok": true, "error": "misuse of aggregate function COUNT()", "em": false}
+{"uid": "spider/dev/924", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/925", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/926", "db_id": "dog_kennels", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.first_name", "em": false}
+{"uid": "spider/dev/927", "db_id": "dog_kennels", "difficulty": "hard", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: first_name", "em": false}
+{"uid": "spider/dev/928", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/929", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/930", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/931", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/932", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/933", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/934", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/935", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/936", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/937", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/938", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/939", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/940", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/941", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/942", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/943", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/944", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/945", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/946", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/947", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/948", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/949", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: treatment_type_description", "em": false}
+{"uid": "spider/dev/950", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.size_description", "em": false}
+{"uid": "spider/dev/951", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.size_description", "em": false}
+{"uid": "spider/dev/952", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/953", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/954", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/955", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/956", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/957", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/958", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/959", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/960", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/961", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/962", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/963", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/964", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/965", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/966", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/967", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/968", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/969", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/970", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/971", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/972", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/973", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/974", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/975", "db_id": "dog_kennels", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/976", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/977", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/978", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/979", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/980", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/981", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/982", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/983", "db_id": "dog_kennels", "difficulty": "extra", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/984", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/985", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/986", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/987", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/988", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/989", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/990", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/991", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/992", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/993", "db_id": "dog_kennels", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/994", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/995", "db_id": "dog_kennels", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/996", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.breed_type_description", "em": false}
+{"uid": "spider/dev/997", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T1.breed_type", "em": false}
+{"uid": "spider/dev/998", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.treatment_type_description", "em": false}
+{"uid": "spider/dev/999", "db_id": "dog_kennels", "difficulty": "medium", "valid": false, "ex": false, "gold_ok": true, "error": "no such column: T2.treatment_type_description", "em": false}
+{"uid": "spider/dev/1000", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1001", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1002", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1003", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1004", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1005", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1006", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1007", "db_id": "singer", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1008", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1009", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1010", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1011", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1012", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1013", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1014", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1015", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1016", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1017", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1018", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1019", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1020", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1021", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1022", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1023", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1024", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1025", "db_id": "singer", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1026", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1027", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1028", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1029", "db_id": "singer", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1030", "db_id": "real_estate_properties", "difficulty": "easy", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": true}
+{"uid": "spider/dev/1031", "db_id": "real_estate_properties", "difficulty": "medium", "valid": true, "ex": true, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1032", "db_id": "real_estate_properties", "difficulty": "medium", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}
+{"uid": "spider/dev/1033", "db_id": "real_estate_properties", "difficulty": "hard", "valid": true, "ex": false, "gold_ok": true, "error": null, "em": false}

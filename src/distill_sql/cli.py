@@ -18,6 +18,8 @@ data_app = typer.Typer(no_args_is_help=True, help="Phase 1: datasets, schemas, c
 app.add_typer(data_app, name="data")
 gen_app = typer.Typer(no_args_is_help=True, help="Phase 2: teacher generation + verification.")
 app.add_typer(gen_app, name="gen")
+eval_app = typer.Typer(no_args_is_help=True, help="Phase 3: evaluation harness.")
+app.add_typer(eval_app, name="eval")
 
 ConfigOpt = Annotated[Path, typer.Option("--config", "-c", help="YAML config file.")]
 DEFAULT_CONFIG = Path("configs/base.yaml")
@@ -51,7 +53,7 @@ def data_download(config: ConfigOpt = DEFAULT_CONFIG) -> None:
     cfg = _cfg(config)
     for name, ds in cfg.datasets.items():
         archive = download(ds.source, cfg.paths.raw_dir / "downloads")
-        safe_extract(archive, cfg.paths.raw_dir / ds.source.extract_to)
+        safe_extract(archive, cfg.paths.raw_dir / ds.extract_to)
         rprint(f"[green]✓[/] {name}: {archive.name} ({ds.license})")
 
 
@@ -260,6 +262,127 @@ def gen_crosscheck(
     if s.stopped_reason:
         rprint(f"[yellow]stopped: {s.stopped_reason}[/]")
     rprint("Next: [bold]make verify[/] to fold agreement into sft.jsonl and the report.")
+
+
+# ---- Phase 3 -----------------------------------------------------------------
+
+
+@eval_app.command("models")
+def eval_models(config: ConfigOpt = DEFAULT_CONFIG) -> None:
+    """Download the GGUF files of every local model in `evaluation.models` (checksummed)."""
+    from distill_sql.data.download import download
+
+    cfg = _cfg(config)
+    assert cfg.evaluation is not None
+    for name, spec in cfg.evaluation.models.items():
+        if spec.gguf is not None:
+            path = download(spec.gguf, cfg.evaluation.models_dir)
+            rprint(f"[green]✓[/] {name}: {path.relative_to(PROJECT_ROOT)}")
+
+
+@eval_app.command("run")
+def eval_run(
+    model: Annotated[str, typer.Option(help="Model name from `evaluation.models`.")],
+    eval_set: Annotated[str, typer.Option("--set", help="Set name from `evaluation.sets`.")],
+    config: ConfigOpt = DEFAULT_CONFIG,
+    limit: Annotated[int | None, typer.Option(help="Predict at most N new questions.")] = None,
+    final: Annotated[bool, typer.Option(help="Allow a held-out (final) test set.")] = False,
+) -> None:
+    """Predict (resumable), execute and score one model on one eval set."""
+    from distill_sql.evaluation.harness import EvalContext, open_model, predict, results_dir, score
+    from distill_sql.utils.runs import Run
+
+    cfg = _cfg(config)
+    assert cfg.evaluation is not None
+    spec = cfg.evaluation.sets[eval_set]
+    if spec.final and not final:
+        rprint(
+            f"[red]{eval_set} is the held-out test set. Re-run with --final (once, at the end).[/]"
+        )
+        raise typer.Exit(2)
+    ctx = EvalContext(cfg, PROJECT_ROOT)
+    items = ctx.load_set(spec)
+    out = results_dir(cfg, eval_set, model)
+    run = Run(cfg, f"eval-{model}-{eval_set}", {"model": model, "set": eval_set, "limit": limit})
+    with open_model(ctx, model, cfg.evaluation.models[model], Secrets()) as handle:
+        n_new, stopped = predict(ctx, handle, items, out, limit)
+        peak = handle.server.peak_rss_bytes if handle.server else None
+    m = score(ctx, eval_set, items, out, handle.price_in, handle.price_out, peak)
+    run.log_metrics(m)
+    ci = m["ex_ci95"]
+    rprint(
+        f"[bold]{model} on {eval_set}[/]: EX {100 * (m['ex'] or 0):.1f}% "
+        f"(95% CI {100 * ci[0]:.1f}-{100 * ci[1]:.1f}) on {m['n']}/{m['n_total']} questions "
+        f"({n_new} new)"
+        if ci
+        else f"{model}: nothing scored yet"
+    )
+    if stopped:
+        rprint(f"[yellow]stopped early: {stopped}. Re-run to resume.[/]")
+
+
+@eval_app.command("make-ci-fixture")
+def eval_make_ci_fixture(
+    model: Annotated[
+        str, typer.Option(help="Model whose saved predictions to freeze.")
+    ] = "base-q8",
+    eval_set: Annotated[str, typer.Option("--set")] = "spider_dev_200",
+    n: Annotated[int, typer.Option(help="Questions in the fixture.")] = 50,
+    config: ConfigOpt = Path("configs/ci.yaml"),
+) -> None:
+    """Freeze a small, stratified slice of saved predictions + DBs for the CI regression check."""
+    from distill_sql.evaluation.ci_check import build_fixture, score_fixture
+    from distill_sql.evaluation.harness import EvalContext, results_dir
+    from distill_sql.utils.io import write_json
+
+    cfg = _cfg(config)
+    assert cfg.evaluation is not None and cfg.eval_regression is not None
+    ctx = EvalContext(cfg, PROJECT_ROOT)
+    reg = cfg.eval_regression
+    out = PROJECT_ROOT / reg.gold_file.parent
+    items = ctx.load_set(cfg.evaluation.sets[eval_set])
+    build_fixture(ctx, items, results_dir(cfg, eval_set, model) / "predictions.jsonl", out, n)
+    m = score_fixture(reg, PROJECT_ROOT)
+    write_json(out / "expected.json", {"source": f"{model} on {eval_set}", **m})
+    rprint(m)
+    rprint(
+        f"Set `min_execution_accuracy: {m['ex']:.4f}` and "
+        f"`min_exact_match: {m['em']:.4f}` in configs/ci.yaml."
+    )
+
+
+@eval_app.command("ci")
+def eval_ci(config: ConfigOpt = Path("configs/ci.yaml")) -> None:
+    """CI regression check: re-score the committed fixture; fail if accuracy drops."""
+    from distill_sql.evaluation.ci_check import score_fixture
+
+    cfg = _cfg(config)
+    assert cfg.eval_regression is not None
+    reg = cfg.eval_regression
+    m = score_fixture(reg, PROJECT_ROOT)
+    rprint(m)
+    failed = [
+        f"{k} {m[k]:.4f} < {floor:.4f}"
+        for k, floor in (("ex", reg.min_execution_accuracy), ("em", reg.min_exact_match))
+        if m[k] < floor - 1e-9
+    ]
+    if failed:
+        rprint(f"[red bold]✗ eval regression: {'; '.join(failed)}[/]")
+        raise typer.Exit(1)
+    rprint("[green bold]✓ eval regression check passed[/]")
+
+
+@eval_app.command("report")
+def eval_report(config: ConfigOpt = DEFAULT_CONFIG) -> None:
+    """Rebuild results/README.md from all result files."""
+    from distill_sql.evaluation.report import render
+    from distill_sql.utils.io import atomic_write_text
+
+    cfg = _cfg(config)
+    assert cfg.evaluation is not None
+    path = cfg.evaluation.results_dir / "README.md"
+    atomic_write_text(path, render(cfg))
+    rprint(path.read_text())
 
 
 if __name__ == "__main__":

@@ -40,7 +40,7 @@ class ExecResult:
 
     def result_hash(self) -> str:
         """Order-insensitive fingerprint of the result (a hash of the row multiset)."""
-        rows = sorted(repr(_canon_row(r)) for r in self.rows)
+        rows = sorted(repr(canon_row(r)) for r in self.rows)
         return hashlib.sha256("\n".join(rows).encode()).hexdigest()[:16]
 
 
@@ -86,7 +86,7 @@ def execute(
     return ExecResult(True, rows[:max_rows], columns, truncated, time.perf_counter() - started)
 
 
-def _canon_value(v: Any) -> Any:
+def canon_value(v: Any) -> Any:
     if isinstance(v, float):
         if math.isnan(v):
             return "nan"
@@ -98,14 +98,14 @@ def _canon_value(v: Any) -> Any:
     return v
 
 
-def _canon_row(row: Row) -> Row:
-    return tuple(_canon_value(v) for v in row)
+def canon_row(row: Row) -> Row:
+    return tuple(canon_value(v) for v in row)
 
 
 def results_match(a: list[Row], b: list[Row], ordered: bool = False) -> bool:
     """Same rows (as a multiset, or as a sequence when ``ordered``), after normalising
     numbers so 3 == 3.0 and float noise below 1e-6 is ignored."""
-    ca, cb = [_canon_row(r) for r in a], [_canon_row(r) for r in b]
+    ca, cb = [canon_row(r) for r in a], [canon_row(r) for r in b]
     if ordered:
         return ca == cb
     return Counter(map(repr, ca)) == Counter(map(repr, cb))

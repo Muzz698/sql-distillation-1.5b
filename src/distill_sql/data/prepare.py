@@ -63,7 +63,7 @@ def prepare(cfg: AppConfig, root: Path) -> Registry:
     dbs: dict[tuple[str, str], tuple[Role, list[str], Path]] = {}
 
     for dataset, split, role in _split_roles(cfg):
-        extract_dir = cfg.paths.raw_dir / cfg.datasets[dataset].source.extract_to
+        extract_dir = cfg.paths.raw_dir / cfg.datasets[dataset].extract_to
         examples = load_examples(extract_dir, dataset, split)
         examples_by_split[(dataset, split)] = examples
         write_jsonl(processed / "examples" / dataset / f"{split}.jsonl", examples)

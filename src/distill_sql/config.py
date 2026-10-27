@@ -38,7 +38,7 @@ class SourceConfig(_Strict):
     filename: str
     urls: list[str] = Field(min_length=1)
     sha256: str | None = Field(default=None, pattern=r"^[0-9a-f]{64}$")
-    extract_to: str  # folder name under paths.raw_dir
+    extract_to: str | None = None  # folder name under paths.raw_dir (archives only)
 
 
 class DatasetConfig(_Strict):
@@ -51,8 +51,15 @@ class DatasetConfig(_Strict):
     # Empty databases cannot execution-verify anything, so they are useless for training.
     exclude_empty_dbs: bool = True
 
+    @property
+    def extract_to(self) -> str:
+        assert self.source.extract_to is not None  # enforced by the validator below
+        return self.source.extract_to
+
     @model_validator(mode="after")
     def _splits_disjoint(self) -> DatasetConfig:
+        if not self.source.extract_to:
+            raise ValueError("a dataset source needs `extract_to:`")
         overlap = set(self.train_splits) & set(self.eval_splits)
         if overlap:
             raise ValueError(f"splits used for both training and eval: {sorted(overlap)}")
@@ -75,7 +82,7 @@ class ContaminationConfig(_Strict):
 
 class TeacherConfig(_Strict):
     name: str = Field(pattern=r"^[a-z0-9][a-z0-9._-]*$")  # also used as a file name
-    provider: Literal["groq", "gemini"]
+    provider: Literal["groq", "gemini", "local"]
     model: str
     # Free-tier limits. The limiter stays under them; `tpd` is optional (Gemini has none).
     rpm: int = Field(gt=0)
@@ -84,6 +91,7 @@ class TeacherConfig(_Strict):
     tpd: int | None = Field(default=None, gt=0)
     # When the provider's daily quota resets (Gemini: midnight Pacific).
     quota_timezone: str = "UTC"
+    base_url: str | None = None  # overrides the provider default (used for local llama-server)
     # Disabled teachers are skipped by `gen run` but still listed in reports, so the data
     # they already produced stays attributed to them.
     enabled: bool = True
@@ -114,6 +122,46 @@ class VerificationConfig(_Strict):
     crosscheck_batch_size: int = Field(default=10, ge=1, le=25)
 
 
+class EvalSetConfig(_Strict):
+    dataset: str
+    split: str
+    n: int | None = Field(default=None, ge=1)  # fixed, stratified subset (seeded) if set
+    final: bool = False  # held-out test set: runs only with --final, once, at the end
+
+
+class EvalModelConfig(_Strict):
+    kind: Literal["local", "teacher"]
+    teacher: str | None = None  # kind=teacher: a name from `teachers:`
+    gguf: SourceConfig | None = None  # kind=local: the GGUF file to serve with llama-server
+    description: str = ""
+
+    @model_validator(mode="after")
+    def _kind_fields(self) -> EvalModelConfig:
+        if self.kind == "teacher" and not self.teacher:
+            raise ValueError("kind=teacher needs `teacher:`")
+        if self.kind == "local" and self.gguf is None:
+            raise ValueError("kind=local needs `gguf:`")
+        return self
+
+
+class LocalServerConfig(_Strict):
+    binary: str = "llama-server"
+    ctx_size: int = Field(default=16384, ge=2048)
+    gpu_layers: int = 99  # all layers on the Apple GPU (Metal)
+    startup_timeout_s: float = 180.0
+
+
+class EvaluationConfig(_Strict):
+    results_dir: Path = Path("results")
+    models_dir: Path = Path("data/models")
+    timeout_s: float = Field(default=30.0, gt=0)
+    max_new_tokens: int = Field(default=512, ge=16)
+    bootstrap_samples: int = Field(default=1000, ge=100)
+    local_server: LocalServerConfig = LocalServerConfig()
+    sets: dict[str, EvalSetConfig]
+    models: dict[str, EvalModelConfig]
+
+
 class TrackingConfig(_Strict):
     backend: Literal["mlflow", "none"] = "mlflow"
     mlflow_uri: str = "file:./mlruns"
@@ -124,7 +172,11 @@ class EvalRegressionConfig(_Strict):
     predictions_file: Path
     gold_file: Path
     db_dir: Path
+    tables_file: Path
+    # Scoring is deterministic, so any drop below the recorded value means the scoring
+    # pipeline (extraction, execution, comparison, EM) changed behaviour.
     min_execution_accuracy: float = Field(ge=0.0, le=1.0)
+    min_exact_match: float = Field(default=0.0, ge=0.0, le=1.0)
 
 
 class AppConfig(_Strict):
@@ -137,6 +189,7 @@ class AppConfig(_Strict):
     contamination: ContaminationConfig = ContaminationConfig()
     generation: GenerationConfig | None = None
     verification: VerificationConfig = VerificationConfig()
+    evaluation: EvaluationConfig | None = None
     tracking: TrackingConfig = TrackingConfig()
 
     @property
@@ -189,4 +242,12 @@ def load_config(path: str | Path, root: Path = PROJECT_ROOT) -> AppConfig:
     if cfg.generation and not cfg.generation.output_dir.is_absolute():
         gen = cfg.generation.model_copy(update={"output_dir": root / cfg.generation.output_dir})
         update["generation"] = gen
+    if cfg.evaluation:
+        ev = cfg.evaluation
+        update["evaluation"] = ev.model_copy(
+            update={
+                k: (root / getattr(ev, k) if not getattr(ev, k).is_absolute() else getattr(ev, k))
+                for k in ("results_dir", "models_dir")
+            }
+        )
     return cfg.model_copy(update=update)

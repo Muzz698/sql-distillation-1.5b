@@ -1,0 +1,7 @@
+{
+  "source": "base-q8 on spider_dev_200",
+  "n": 50,
+  "ex": 0.74,
+  "em": 0.56,
+  "valid_rate": 0.88
+}

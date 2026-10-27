@@ -1,0 +1,40 @@
+{
+  "set": "spider_dev",
+  "kind": "local",
+  "n": 1034,
+  "n_total": 1034,
+  "complete": true,
+  "ex": 0.6344294003868471,
+  "ex_ci95": [
+    0.6054158607350096,
+    0.6634429400386848
+  ],
+  "em": 0.45938104448742745,
+  "valid_rate": 0.8471953578336557,
+  "by_difficulty": {
+    "easy": {
+      "n": 248,
+      "ex": 0.8467741935483871
+    },
+    "medium": {
+      "n": 446,
+      "ex": 0.6457399103139013
+    },
+    "hard": {
+      "n": 174,
+      "ex": 0.5229885057471264
+    },
+    "extra": {
+      "n": 166,
+      "ex": 0.4036144578313253
+    }
+  },
+  "latency_p50_s": 0.35,
+  "latency_p95_s": 0.937,
+  "tokens_per_s": 61.901,
+  "mean_prompt_tokens": 770.959,
+  "mean_output_tokens": 28.023,
+  "cost_per_1k_usd": 0.0,
+  "peak_memory_mb": 2654,
+  "gold_failures": 0
+}

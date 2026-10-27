@@ -297,6 +297,21 @@ calculated from paid list prices. We never actually pay it.
   `gemini-3.1-flash-lite` kept 22/24 with 15 medium and 7 hard. The old teacher stays in the config,
   disabled, so its 176 pairs remain attributed.
 - 2026-10-27 — Daily quotas reset in the provider's timezone (`quota_timezone`; Gemini = Pacific).
+- 2026-10-27 — Eval harness: one OpenAI-compatible client for every model. Local GGUF models
+  run behind llama.cpp's `llama-server` (Metal), so the base model, our fine-tunes and the teachers
+  get identical prompts, caching and timing. No Python bindings or C build needed.
+- 2026-10-27 — Base-model baseline uses the official `q8_0` GGUF (Hub revision pinned, sha256
+  checked). Qwen publishes no fp16 GGUF; 8-bit is effectively lossless at this size. Phase 6
+  converts our own models and reports any quantisation loss explicitly.
+- 2026-10-27 — Spider exact match and difficulty labels come from the official
+  test-suite-sql-eval code (vendored, Apache-2.0). `nltk` was swapped for an equivalent regex
+  tokenizer; it reproduces the official dev difficulty counts (248/446/174/166) and gold-vs-gold
+  EM = 100%.
+- 2026-10-27 — Execution-match rules follow each benchmark's official evaluation: Spider =
+  multiset, ordered only when the outer gold query has ORDER BY; BIRD = set equality.
+- 2026-10-27 — Fixed, stratified subsets (`spider_dev_200`, `bird_minidev_100`) for the
+  comparison table, because free-tier teachers can't afford the full sets daily. Local models also
+  run the full sets.
 - 2026-10-27 — Hidden reasoning tokens (in `total_tokens` but not `completion_tokens`) now count
   toward rate limits and list-price cost.
 - 2026-10-27 — `max_tokens` lowered from 4096 to 2048: Groq appears to reserve `max_tokens` against

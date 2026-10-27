@@ -12,20 +12,17 @@ dependencies = [
     "pyyaml>=6.0",
     "sqlglot>=25.0",
     "httpx>=0.27",
-    "tenacity>=8.5",
     "tqdm>=4.66",
     "rich>=13.7",
     "typer>=0.12",
+    "psutil>=6.0",
 ]
 
 [project.optional-dependencies]
-# Phase 3 / 6: local inference + tracking on the Mac.
+# Experiment tracking UI. Local inference uses the `llama-server` binary from llama.cpp
+# (`brew install llama.cpp`), so no Python bindings or C compiler are needed.
 eval = [
-    "llama-cpp-python>=0.3",
     "mlflow>=2.16",
-    "psutil>=6.0",
-    "numpy>=1.26",
-    "pandas>=2.2",
 ]
 # Phase 4–5: installed inside the Kaggle notebook (torch is preinstalled there).
 train = [
@@ -55,6 +52,7 @@ dev = [
     "mypy>=1.11",
     "types-pyyaml>=6.0",
     "types-tqdm>=4.70.0.20260906",
+    "types-psutil>=6.0",
 ]
 
 [build-system]
@@ -71,7 +69,7 @@ default-groups = ["dev"]
 line-length = 100
 target-version = "py311"
 src = ["src", "tests"]
-extend-exclude = ["notebooks", "third_party"]
+extend-exclude = ["notebooks", "src/distill_sql/third_party"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "N", "RUF", "PTH", "C4"]
@@ -82,9 +80,15 @@ strict = true
 files = ["src"]
 plugins = ["pydantic.mypy"]
 
+exclude = ["src/distill_sql/third_party/"]
+
 [[tool.mypy.overrides]]
-module = ["sqlglot.*", "llama_cpp.*", "mlflow.*"]
+module = ["sqlglot.*", "mlflow.*"]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["distill_sql.third_party.*"]
+follow_imports = "skip"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
