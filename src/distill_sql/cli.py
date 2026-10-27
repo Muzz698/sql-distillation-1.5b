@@ -170,15 +170,15 @@ def gen_run(
     ] = False,
 ) -> None:
     """Generate question/SQL pairs with the teachers (resumable; safe to re-run daily)."""
-    from distill_sql.generation.generate import estimate_budget, plan_tasks
-    from distill_sql.generation.pipeline import build_context, generate
+    from distill_sql.generation.generate import estimate_budget
+    from distill_sql.generation.pipeline import build_context, generate, teacher_tasks
     from distill_sql.utils.runs import Run
 
     cfg = _cfg(config)
     ctx = build_context(cfg, PROJECT_ROOT)
     teachers = _teachers(cfg, teacher)
     if dry_run:
-        tasks = plan_tasks(teachers[0].name, ctx.registry, ctx.gen)
+        tasks = teacher_tasks(ctx, teachers[0])
         rprint("[bold]Example prompt[/] (first task):\n")
         for m in ctx.prompts.messages(tasks[0]):
             rprint(f"[cyan]--- {m['role']} ---[/]\n{m['content']}\n")
@@ -186,7 +186,7 @@ def gen_run(
         for col in ("teacher", "calls", "~tok/call", "~calls/day", "~days", "raw pairs"):
             table.add_column(col)
         for t in teachers:
-            b = estimate_budget(t, plan_tasks(t.name, ctx.registry, ctx.gen), ctx.prompts, ctx.gen)
+            b = estimate_budget(t, teacher_tasks(ctx, t), ctx.prompts, ctx.gen)
             table.add_row(
                 t.name,
                 str(b["calls"]),

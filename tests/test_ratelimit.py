@@ -90,3 +90,12 @@ def test_daily_token_limit(tmp_path: Path) -> None:
 def test_request_bigger_than_tpm_is_an_error(tmp_path: Path) -> None:
     with pytest.raises(ValueError, match="exceeds TPM"):
         _limiter(tmp_path, FakeClock()).acquire(5000)
+
+
+def test_unserved_requests_do_not_use_the_daily_budget(tmp_path: Path) -> None:
+    lim = _limiter(tmp_path, FakeClock(), rpm=100, tpm=10_000, rpd=2)
+    for _ in range(5):  # e.g. five 503s in a row
+        lim.acquire(10)
+        lim.record(0, count_request=False)
+    assert lim.requests_today == 0
+    lim.acquire(10)  # the daily budget is untouched

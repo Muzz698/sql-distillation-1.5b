@@ -90,12 +90,16 @@ class RateLimiter:
                 return
             self._sleep(60.0 - (now - self._window[0][0]) + 0.05)
 
-    def record(self, actual_tokens: int) -> None:
-        """Replace the latest reservation with what the provider actually reported."""
+    def record(self, actual_tokens: int, count_request: bool = True) -> None:
+        """Replace the latest reservation with what the provider actually reported.
+
+        ``count_request=False`` is for requests the provider did not serve (5xx, network
+        errors): they still pace the per-minute window but do not use up the daily budget.
+        """
         if self._window:
             ts, _ = self._window.pop()
             self._window.append((ts, actual_tokens))
-        self.requests_today += 1
+        self.requests_today += int(count_request)
         self.tokens_today += actual_tokens
         self._save()
 

@@ -10,7 +10,12 @@ from pydantic import SecretStr
 
 from distill_sql.config import Secrets, TeacherConfig
 from distill_sql.generation.cache import ResponseCache
-from distill_sql.generation.client import TeacherClient, TeacherError, api_key_for
+from distill_sql.generation.client import (
+    RequestTooLarge,
+    TeacherClient,
+    TeacherError,
+    api_key_for,
+)
 from distill_sql.generation.ratelimit import DailyLimitReached, RateLimiter
 
 TEACHER = TeacherConfig(
@@ -143,3 +148,46 @@ def test_hidden_reasoning_tokens_count_toward_limits(tmp_path: Path) -> None:
     assert completion.reasoning_tokens == 128
     assert completion.total_tokens == 151
     assert client.limiter.tokens_today == 151
+
+
+def test_server_errors_do_not_count_toward_daily_requests(tmp_path: Path) -> None:
+    responses = [httpx.Response(503), httpx.Response(503), ok()]
+    client, _ = make(tmp_path, lambda req: responses.pop(0))
+    client.complete(MESSAGES)
+    assert client.limiter.requests_today == 1  # only the served request
+
+
+def test_rate_limited_requests_do_count(tmp_path: Path) -> None:
+    responses = [httpx.Response(429, text="slow down"), ok()]
+    client, _ = make(tmp_path, lambda req: responses.pop(0))
+    client.complete(MESSAGES)
+    assert client.limiter.requests_today == 2  # providers count 429s against quota
+
+
+def _too_large(requested: int) -> httpx.Response:
+    msg = (
+        "Request too large for model on tokens per minute (TPM): "
+        f"Limit 8000, Requested {requested}, please reduce your message size and try again."
+    )
+    return httpx.Response(413, json={"error": {"message": msg}})
+
+
+def test_413_shrinks_max_tokens_and_retries(tmp_path: Path) -> None:
+    sent: list[int] = []
+    responses = [_too_large(8219), ok()]
+
+    def handler(req: httpx.Request) -> httpx.Response:
+        sent.append(json.loads(req.content)["max_tokens"])
+        return responses.pop(0)
+
+    client, _ = make(tmp_path, handler)
+    assert client.complete(MESSAGES, max_tokens=2048).text == "SELECT 1"
+    assert sent[0] == 2048
+    assert sent[1] == 2048 - 219 - 160  # overflow plus a 2% safety margin
+    assert client.complete(MESSAGES, max_tokens=2048).cached  # same cache key as the original
+
+
+def test_413_with_a_huge_prompt_is_a_skip_not_a_failure(tmp_path: Path) -> None:
+    client, _ = make(tmp_path, lambda req: _too_large(9500))
+    with pytest.raises(RequestTooLarge, match="prompt too large"):
+        client.complete(MESSAGES, max_tokens=2048)

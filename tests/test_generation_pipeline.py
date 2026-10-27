@@ -153,3 +153,36 @@ def test_verify_crosscheck_and_contamination(ctx: pipeline.Context) -> None:
     eval_examples = list(ctx.eval_index.examples)
     result = check(ctx.registry, eval_examples, rows, ctx.cfg.contamination)
     assert result.passed, result.to_dict()
+
+
+def test_teachers_start_on_different_databases() -> None:
+    from distill_sql.data.datasets import DatabaseEntry, Registry
+    from distill_sql.generation.generate import plan_tasks
+
+    registry = Registry(
+        databases=[
+            DatabaseEntry(
+                dataset="spider",
+                db_id=f"db{i:02d}",
+                role="train",
+                splits=["train_spider"],
+                path=f"x/db{i:02d}.sqlite",
+                fingerprint=f"fp{i}",
+                n_tables=1,
+                n_columns=1,
+                n_rows=1,
+            )
+            for i in range(9)
+        ]
+    )
+    gen = GenerationConfig(calls_per_db=2, focuses=["a", "b"])
+    plans = [plan_tasks(f"t{s}", registry, gen, slot=s, n_slots=3) for s in range(3)]
+
+    # Each teacher's first 3 calls hit different databases: 9 DBs covered, not 3.
+    first_calls = [{t.db_id for t in plan[:3]} for plan in plans]
+    assert set().union(*first_calls) == {f"db{i:02d}" for i in range(9)}
+    # Same work overall: only the order changes, so resuming by task id still works.
+    for plan in plans:
+        assert sorted((t.db_id, t.call_index) for t in plan) == sorted(
+            (t.db_id, t.call_index) for t in plans[0]
+        )

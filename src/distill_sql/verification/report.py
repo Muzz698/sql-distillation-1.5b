@@ -21,10 +21,11 @@ def _pct(n: int, d: int) -> str:
 def call_stats(output_dir: Path, teacher: str) -> dict[str, Any]:
     path = output_dir / f"{teacher}.calls.jsonl"
     rows = list(iter_jsonl(path)) if path.exists() else []
-    live = [r for r in rows if not r.get("cached")]
+    live = [r for r in rows if not r.get("cached") and "latency_s" in r]
     return {
         "calls": len(rows),
         "parse_errors": sum(r["status"] == "parse_error" for r in rows),
+        "too_large": sum(r["status"] == "too_large" for r in rows),
         "prompt_tokens": sum(r.get("prompt_tokens", 0) for r in rows),
         "completion_tokens": sum(r.get("completion_tokens", 0) for r in rows),
         "reasoning_tokens": sum(r.get("reasoning_tokens", 0) for r in rows),

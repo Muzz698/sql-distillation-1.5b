@@ -24,7 +24,12 @@ from typing import Any
 from distill_sql.config import AppConfig, GenerationConfig, TeacherConfig
 from distill_sql.data.datasets import Example, Registry
 from distill_sql.data.schema import DatabaseSchema, column_value_hints
-from distill_sql.generation.client import TeacherClient, TeacherError, estimate_tokens
+from distill_sql.generation.client import (
+    RequestTooLarge,
+    TeacherClient,
+    TeacherError,
+    estimate_tokens,
+)
 from distill_sql.generation.prompts import (
     Message,
     ParseError,
@@ -61,6 +66,7 @@ class RunSummary:
     pairs: int = 0
     parse_errors: int = 0
     teacher_errors: int = 0
+    too_large: int = 0
     tokens: int = 0
     stopped_reason: str | None = None
     errors: list[str] = field(default_factory=list)
@@ -70,8 +76,15 @@ def _stable_offset(text: str, mod: int) -> int:
     return int(hashlib.sha256(text.encode()).hexdigest(), 16) % mod
 
 
-def plan_tasks(teacher: str, registry: Registry, gen: GenerationConfig) -> list[Task]:
+def plan_tasks(
+    teacher: str, registry: Registry, gen: GenerationConfig, slot: int = 0, n_slots: int = 1
+) -> list[Task]:
+    """Tasks for one teacher. Teacher ``slot`` of ``n_slots`` starts at a different point in the
+    DB list (evenly spaced), so teachers that stop at their daily limit have covered
+    different databases instead of all covering the same first ones."""
     dbs = sorted(registry.by_role("train"), key=lambda d: d.key)
+    start = slot * len(dbs) // max(1, n_slots)
+    dbs = dbs[start:] + dbs[:start]
     n_focus = len(gen.focuses)
     return [
         Task(
@@ -160,6 +173,13 @@ def run_teacher(
         except DailyLimitReached as exc:
             summary.stopped_reason = str(exc)
             break
+        except RequestTooLarge as exc:
+            # Permanent for this teacher: record it so it is not retried every day. Teachers
+            # with a bigger per-request limit (Gemini) still cover this database.
+            summary.too_large += 1
+            log.warning("%s", exc)
+            _append(calls_file, [call_row | {"status": "too_large", "error": str(exc)}])
+            continue
         except TeacherError as exc:
             # Not written to calls.jsonl, so the task is retried on the next run.
             summary.teacher_errors += 1

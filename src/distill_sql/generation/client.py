@@ -42,6 +42,15 @@ class TeacherError(RuntimeError):
     pass
 
 
+class RequestTooLarge(TeacherError):  # noqa: N818 - a per-task skip signal, like DailyLimitReached
+    """The prompt alone is too big for this provider's per-request limit."""
+
+
+# Groq: "... tokens per minute (TPM): Limit 8000, Requested 8219, please reduce your message size"
+_TOO_LARGE = re.compile(r"Limit (\d+), Requested (\d+)")
+MIN_OUTPUT_TOKENS = 1024  # below this, 8 question/SQL pairs no longer fit
+
+
 @dataclass(frozen=True)
 class Completion:
     text: str
@@ -115,6 +124,8 @@ class TeacherClient:
             return Completion(**hit["completion"], cached=True)
 
         est = estimate_tokens(messages) + min(max_tokens, self.expected_output_tokens)
+        # The cache key above stays the one for the original request: shrinking max_tokens is a
+        # deterministic reaction to it, so a re-run gets the same answer from the cache.
         for attempt in range(1, self.max_retries + 1):
             self.limiter.acquire(est)
             started = time.perf_counter()
@@ -123,7 +134,7 @@ class TeacherClient:
                     f"{self.base_url}/chat/completions", json=payload, headers=self.headers
                 )
             except httpx.TransportError as exc:
-                self.limiter.record(0)
+                self.limiter.record(0, count_request=False)
                 self._backoff(attempt, f"network error: {exc}")
                 continue
             latency = time.perf_counter() - started
@@ -142,7 +153,9 @@ class TeacherClient:
                 )
                 return completion
 
-            self.limiter.record(0)
+            # 5xx = the provider failed to serve us; on day 1, 503 storms counted this way
+            # used up Gemini's whole daily budget after 11 successful calls.
+            self.limiter.record(0, count_request=resp.status_code < 500)
             body = resp.text[:500]
             if resp.status_code == 429:
                 if _DAILY_HINTS.search(body):
@@ -151,6 +164,22 @@ class TeacherClient:
                 self._backoff(attempt, "rate limited (429)", resp.headers.get("retry-after"))
             elif resp.status_code >= 500:
                 self._backoff(attempt, f"server error {resp.status_code}")
+            elif resp.status_code == 413 and (m := _TOO_LARGE.search(body)):
+                # Groq counts the *requested* max_tokens toward a per-request token limit.
+                # Shrink the output budget by the overflow (+2% margin) and try again.
+                limit, requested = int(m.group(1)), int(m.group(2))
+                new_max = payload["max_tokens"] - (requested - limit) - limit // 50
+                if new_max < MIN_OUTPUT_TOKENS:
+                    raise RequestTooLarge(
+                        f"{self.teacher.name}: prompt too large ({requested} > {limit} tokens)"
+                    )
+                log.info(
+                    "%s: max_tokens %d -> %d (413)",
+                    self.teacher.name,
+                    payload["max_tokens"],
+                    new_max,
+                )
+                payload = {**payload, "max_tokens": new_max}
             else:
                 raise TeacherError(f"{self.teacher.name}: HTTP {resp.status_code}: {body}")
         raise TeacherError(f"{self.teacher.name}: gave up after {self.max_retries} attempts")

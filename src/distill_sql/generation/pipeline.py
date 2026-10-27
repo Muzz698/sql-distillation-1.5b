@@ -27,6 +27,7 @@ from distill_sql.generation.fewshot import build_fewshot_pool, load_pool, save_p
 from distill_sql.generation.generate import (
     PromptBuilder,
     RunSummary,
+    Task,
     iter_generated_pairs,
     plan_tasks,
     run_teacher,
@@ -109,6 +110,13 @@ def make_client(
     )
 
 
+def teacher_tasks(ctx: Context, teacher: TeacherConfig) -> list[Task]:
+    """The teacher's slot is its position in the config, so it stays the same whichever
+    subset of teachers a run uses (`--teacher`)."""
+    names = [t.name for t in ctx.cfg.teachers]
+    return plan_tasks(teacher.name, ctx.registry, ctx.gen, names.index(teacher.name), len(names))
+
+
 def generate(
     ctx: Context,
     teachers: list[TeacherConfig],
@@ -120,8 +128,9 @@ def generate(
 
     def one(teacher: TeacherConfig) -> RunSummary:
         client = make_client(ctx, teacher, secrets, http)
-        tasks = plan_tasks(teacher.name, ctx.registry, ctx.gen)
-        return run_teacher(teacher, client, tasks, ctx.prompts, ctx.gen, max_calls)
+        return run_teacher(
+            teacher, client, teacher_tasks(ctx, teacher), ctx.prompts, ctx.gen, max_calls
+        )
 
     with ThreadPoolExecutor(max_workers=max(1, len(teachers))) as pool:
         return list(pool.map(one, teachers))
