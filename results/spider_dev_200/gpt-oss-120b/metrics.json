@@ -1,0 +1,40 @@
+{
+  "set": "spider_dev_200",
+  "kind": "api",
+  "n": 200,
+  "n_total": 200,
+  "complete": true,
+  "ex": 0.745,
+  "ex_ci95": [
+    0.68,
+    0.805
+  ],
+  "em": 0.25,
+  "valid_rate": 1,
+  "by_difficulty": {
+    "easy": {
+      "n": 48,
+      "ex": 0.9166666666666666
+    },
+    "medium": {
+      "n": 86,
+      "ex": 0.7093023255813954
+    },
+    "hard": {
+      "n": 34,
+      "ex": 0.8235294117647058
+    },
+    "extra": {
+      "n": 32,
+      "ex": 0.5
+    }
+  },
+  "latency_p50_s": 0.684,
+  "latency_p95_s": 1.303,
+  "tokens_per_s": 96.66,
+  "mean_prompt_tokens": 726.15,
+  "mean_output_tokens": 70.595,
+  "cost_per_1k_usd": 0.151,
+  "peak_memory_mb": null,
+  "gold_failures": 0
+}

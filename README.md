@@ -29,12 +29,17 @@ significance tests and per-difficulty results: [results/README.md](results/READM
 | + SFT + DPO (ours) | Phase 5 | | | | $0 |
 | + SFT + DPO, 4-bit GGUF (ours) | Phase 6 | | | | $0 |
 | Teacher: `gemini-3.1-flash-lite` | 80.0% | 68.0% | 2.1 s | – | $0.25 |
-| Teacher: `gpt-oss-120b` (Groq) | pending | pending | | – | |
-| Teacher: `qwen3.8-27b` (Groq) | pending | pending | | – | |
+| Teacher: `gpt-oss-120b` (Groq) | 74.5% | in progress (13/100) | 0.68 s | – | $0.15 |
+| Teacher: `qwen3.8-27b` (Groq) | 79.0% | in progress (10/100) | 0.31 s | – | $0.77 |
 
 On the full sets the base model scores **63.4%** on Spider dev (1,034 q, 95% CI 60.5–66.3)
 and **21.4%** on BIRD Mini-Dev (500 q). Its main failure mode is schema linking (columns from
 the wrong table, columns that don't exist) and, on BIRD, MySQL-only functions such as `YEAR()`.
+
+All three teachers beat the base model by 12–17 points on the same 200 Spider questions
+(paired McNemar test, p < 0.001 each). Most teacher misses return genuinely different rows, not
+just a different column order, so the gap is real. The BIRD subset for the Groq teachers finishes
+over the next days (free-tier limit: about 200K tokens/day).
 
 EX = execution accuracy: the predicted SQL returns the same rows as the gold SQL.
 \*Paid list price per 1,000 queries; we pay $0 on free tiers. Local models have no marginal cost.

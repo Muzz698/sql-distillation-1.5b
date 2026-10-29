@@ -1,0 +1,36 @@
+{
+  "set": "bird_minidev_100",
+  "kind": "api",
+  "n": 10,
+  "n_total": 100,
+  "complete": false,
+  "ex": 0.6,
+  "ex_ci95": [
+    0.3,
+    0.9
+  ],
+  "em": null,
+  "valid_rate": 1,
+  "by_difficulty": {
+    "simple": {
+      "n": 4,
+      "ex": 0.75
+    },
+    "moderate": {
+      "n": 4,
+      "ex": 0.5
+    },
+    "challenging": {
+      "n": 2,
+      "ex": 0.5
+    }
+  },
+  "latency_p50_s": 0.616,
+  "latency_p95_s": 1.313,
+  "tokens_per_s": 134.772,
+  "mean_prompt_tokens": 1399.1,
+  "mean_output_tokens": 71.1,
+  "cost_per_1k_usd": 1.404,
+  "peak_memory_mb": null,
+  "gold_failures": 0
+}
